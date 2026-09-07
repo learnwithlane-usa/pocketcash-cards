@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Pocket Cash Cards - GA4 Analytics & Conversion Tracking
  * Measurement ID: G-7S9BWRF1C4
  */
@@ -34,12 +34,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Auto-detect outbound destination conversions
       if (href.includes('ebay.us') || href.includes('ebay.com')) {
-        gtag('event', 'click_ebay_store', {
-          event_category: 'outbound_ecommerce',
-          event_label: label || 'eBay Store',
-          link_url: href,
-          transport_type: 'beacon'
-        });
+        const cardParent = el.closest('.card-item');
+        if (cardParent) {
+          const cardNum = cardParent.getAttribute('data-number') || '';
+          const cardPlayer = cardParent.getAttribute('data-player') || cardParent.getAttribute('data-name') || '';
+          const cardTeam = cardParent.getAttribute('data-team') || 'PDC Darts';
+          gtag('event', 'click_affiliate_card', {
+            event_category: 'affiliate_epn',
+            event_label: `#${cardNum} ${cardPlayer} (${cardTeam})`,
+            card_number: cardNum,
+            card_player: cardPlayer,
+            card_team: cardTeam,
+            link_url: href,
+            transport_type: 'beacon'
+          });
+        } else {
+          gtag('event', 'click_ebay_store', {
+            event_category: 'outbound_ecommerce',
+            event_label: label || 'eBay Store',
+            link_url: href,
+            transport_type: 'beacon'
+          });
+        }
       } else if (href.includes('litcards.store')) {
         gtag('event', 'click_litcards_exchange', {
           event_category: 'outbound_exchange',
@@ -83,4 +99,13 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // Track Checklist View Events
+  if (window.location.pathname.includes('/checklists/')) {
+    gtag('event', 'view_checklist_guide', {
+      event_category: 'content_engagement',
+      event_label: document.title,
+      page_path: window.location.pathname
+    });
+  }
 });
