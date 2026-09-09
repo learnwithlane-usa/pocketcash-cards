@@ -6,6 +6,7 @@
   <title>Pocket Cash Cards Shop | Coming Soon — 3D Printed Card Gear & Graded Slabs</title>
   <meta name="description" content="Coming Soon: Shop custom 3D printed sports card displays, slab stands, and authentic PSA, SGC, & BGS graded sports cards from Pocket Cash Cards. $5 flat rate tracked shipping per order or local Ardmore pickup.">
   <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <link rel="canonical" href="https://getpocketcash.com/shop.html">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
@@ -97,6 +98,8 @@
       <!-- Desktop Nav -->
       <nav class="hidden md:flex items-center space-x-7 text-sm font-bold text-slate-200">
         <a href="index.html" class="hover:text-brand-primary transition-colors">Home</a>
+        <a href="checklists/index.html" class="hover:text-brand-primary transition-colors">Checklists & Guides</a>
+        <a href="turntables/index.html" class="hover:text-brand-primary transition-colors">Audio Directory</a>
         <a href="shop.html" class="text-brand-primary flex items-center gap-1.5">
           <span>Shop</span>
           <span class="text-[10px] bg-brand-primary/20 text-brand-primary font-bold px-1.5 py-0.5 rounded-full border border-brand-primary/30">Soon</span>
@@ -113,18 +116,48 @@
         </a>
       </nav>
 
-      <!-- VIP Club Button & Phone -->
+      <!-- VIP Club Button & Phone & Mobile Toggle -->
       <div class="flex items-center space-x-3">
         <a href="https://mailchi.mp/e4605a56db23/pocket-cash-cards" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-brand-primary hover:bg-brand-primaryHover text-slate-950 font-black px-4 py-2.5 rounded-xl shadow-lg transition transform active:scale-95 text-xs sm:text-sm">
           <span>🔔</span>
-          <span>Notify Me on Launch</span>
+          <span class="hidden sm:inline">Notify Me on Launch</span>
+          <span class="sm:hidden">VIP</span>
         </a>
 
-        <a href="tel:4054597176" class="hidden sm:inline-flex items-center gap-2 bg-slate-800/90 hover:bg-slate-700 text-slate-200 text-xs font-bold px-3.5 py-2.5 rounded-xl border border-slate-700 shadow-sm transition">
+        <a href="tel:4054597176" class="hidden lg:inline-flex items-center gap-2 bg-slate-800/90 hover:bg-slate-700 text-slate-200 text-xs font-bold px-3.5 py-2.5 rounded-xl border border-slate-700 shadow-sm transition">
           <svg class="w-3.5 h-3.5 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
           (405) 459-7176
         </a>
+
+        <!-- Mobile Menu Button -->
+        <button id="shopMobileMenuBtn" type="button" aria-label="Toggle navigation menu" class="md:hidden p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-brand-primary">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
       </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="shopMobileMenu" class="hidden md:hidden bg-brand-navy border-b border-brand-border px-4 pt-3 pb-5 space-y-2">
+      <a href="index.html" class="block py-2 px-3 rounded-lg text-slate-200 hover:bg-slate-800 hover:text-brand-primary font-bold text-sm">Home</a>
+      <a href="checklists/index.html" class="block py-2 px-3 rounded-lg text-slate-200 hover:bg-slate-800 hover:text-brand-primary font-bold text-sm flex items-center justify-between">
+        <span>Checklists & Guides</span>
+        <span class="text-[10px] bg-brand-primary/20 text-brand-primary font-mono px-2 py-0.5 rounded-full border border-brand-primary/30">21 Sets</span>
+      </a>
+      <a href="turntables/index.html" class="block py-2 px-3 rounded-lg text-slate-200 hover:bg-slate-800 hover:text-amber-400 font-bold text-sm flex items-center justify-between">
+        <span>Audio Directory</span>
+        <span class="text-[10px] bg-amber-500/20 text-amber-300 font-mono px-2 py-0.5 rounded-full border border-amber-500/30">Parts Locator</span>
+      </a>
+      <a href="shop.html" class="block py-2 px-3 rounded-lg text-brand-primary font-bold text-sm bg-brand-primary/10">Shop (Preview)</a>
+      <a href="ardmore.html" class="block py-2 px-3 rounded-lg text-slate-200 hover:bg-slate-800 hover:text-brand-primary font-bold text-sm">Ardmore Retail Shop</a>
+      <a href="sell-cards.html" class="block py-2 px-3 rounded-lg text-slate-200 hover:bg-slate-800 hover:text-brand-primary font-bold text-sm">Sell Your Cards</a>
+      <a href="https://ebay.us/dpjwTn" target="_blank" rel="noopener noreferrer" class="block py-2 px-3 rounded-lg bg-brand-secondary/15 text-brand-secondary font-bold text-sm">
+        Shop Daily eBay Drops ↗
+      </a>
+      <a href="http://www.litcards.store" target="_blank" rel="noopener noreferrer" class="block py-2 px-3 rounded-lg text-brand-cream hover:bg-slate-800 font-bold text-sm">
+        Litcards Private Exchange ↗
+      </a>
     </div>
   </header>
 
@@ -314,6 +347,12 @@
       <div class="space-y-2">
         <h4 class="text-white font-bold text-sm">Follow &amp; Community</h4>
         <div class="flex flex-col space-y-2">
+          <a href="checklists/index.html" class="hover:text-white flex items-center gap-2">
+            <span>📚</span> Checklists &amp; Guides
+          </a>
+          <a href="turntables/index.html" class="hover:text-white flex items-center gap-2">
+            <span>🎧</span> Turntable Parts Directory
+          </a>
           <a href="https://www.facebook.com/GetPocketCash" target="_blank" rel="noopener noreferrer" class="hover:text-white flex items-center gap-2">
             <span>👍</span> Facebook (@GetPocketCash)
           </a>
@@ -540,6 +579,15 @@
         renderProducts(btn.dataset.category);
       });
     });
+
+    // Mobile Menu Toggle
+    const shopMobileMenuBtn = document.getElementById('shopMobileMenuBtn');
+    const shopMobileMenu = document.getElementById('shopMobileMenu');
+    if (shopMobileMenuBtn && shopMobileMenu) {
+      shopMobileMenuBtn.addEventListener('click', () => {
+        shopMobileMenu.classList.toggle('hidden');
+      });
+    }
 
     // Initial render
     renderProducts('all');

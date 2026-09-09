@@ -81,6 +81,10 @@
         <a href="../index.html" class="hover:text-brand-primary transition-colors">Home</a>
         <a href="index.html" class="text-brand-primary">Checklists & Guides</a>
         <a href="../turntables/index.html" class="hover:text-brand-primary transition-colors">Audio Directory</a>
+        <a href="../shop.html" class="hover:text-brand-primary transition-colors flex items-center gap-1.5">
+          <span>Shop</span>
+          <span class="text-[10px] bg-brand-primary/20 text-brand-primary font-bold px-1.5 py-0.5 rounded-full border border-brand-primary/30">Soon</span>
+        </a>
         <a href="../ardmore.html" class="hover:text-brand-primary transition-colors">Ardmore Shop</a>
         <a href="../sell-cards.html" class="hover:text-brand-primary transition-colors">Sell Your Cards</a>
         <a href="https://ebay.us/dpjwTn" target="_blank" rel="noopener noreferrer" class="text-brand-secondary hover:text-brand-secondaryHover transition-colors flex items-center gap-1">
@@ -93,7 +97,30 @@
         <a href="https://ebay.us/dpjwTn" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 bg-brand-secondary hover:bg-brand-secondaryHover text-white text-xs sm:text-sm font-black px-4 py-2.5 rounded-xl shadow-lg hover:shadow-red-500/20 transition transform active:scale-95">
           Shop eBay Drops
         </a>
+
+        <!-- Mobile Menu Button -->
+        <button id="checklistsMobileMenuBtn" type="button" aria-label="Toggle navigation menu" class="md:hidden p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-brand-primary">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
       </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="checklistsMobileMenu" class="hidden md:hidden bg-brand-navy border-b border-brand-border px-4 pt-3 pb-5 space-y-2">
+      <a href="../index.html" class="block py-2 px-3 rounded-lg text-slate-200 hover:bg-slate-800 hover:text-brand-primary font-bold text-sm">Home</a>
+      <a href="index.html" class="block py-2 px-3 rounded-lg text-brand-primary font-bold text-sm bg-brand-primary/10">Checklists & Guides (21 Sets)</a>
+      <a href="../turntables/index.html" class="block py-2 px-3 rounded-lg text-slate-200 hover:bg-slate-800 hover:text-amber-400 font-bold text-sm flex items-center justify-between">
+        <span>Audio Directory</span>
+        <span class="text-[10px] bg-amber-500/20 text-amber-300 font-mono px-2 py-0.5 rounded-full border border-amber-500/30">Parts Locator</span>
+      </a>
+      <a href="../shop.html" class="block py-2 px-3 rounded-lg text-slate-200 hover:bg-slate-800 hover:text-brand-primary font-bold text-sm">Shop (Soon)</a>
+      <a href="../ardmore.html" class="block py-2 px-3 rounded-lg text-slate-200 hover:bg-slate-800 hover:text-brand-primary font-bold text-sm">Ardmore Retail Shop</a>
+      <a href="../sell-cards.html" class="block py-2 px-3 rounded-lg text-slate-200 hover:bg-slate-800 hover:text-brand-primary font-bold text-sm">Sell Your Cards</a>
+      <a href="https://ebay.us/dpjwTn" target="_blank" rel="noopener noreferrer" class="block py-2 px-3 rounded-lg bg-brand-secondary/15 text-brand-secondary font-bold text-sm">
+        Shop Daily eBay Drops ↗
+      </a>
     </div>
   </header>
 
@@ -1818,6 +1845,7 @@
       <div class="flex items-center space-x-6 text-xs">
         <a href="../index.html" class="hover:text-white transition">Home</a>
         <a href="../turntables/index.html" class="hover:text-white transition">Audio Parts</a>
+        <a href="../shop.html" class="hover:text-white transition">Shop (Soon)</a>
         <a href="../ardmore.html" class="hover:text-white transition">Ardmore Shop</a>
         <a href="../sell-cards.html" class="hover:text-white transition">Sell Cards</a>
         <a href="https://ebay.us/dpjwTn" target="_blank" rel="noopener noreferrer" class="hover:text-brand-secondary transition">eBay Store ↗</a>
@@ -1831,6 +1859,15 @@
   <!-- Interactive JavaScript Engine -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      // Mobile Menu Toggle
+      const checklistsMobileMenuBtn = document.getElementById('checklistsMobileMenuBtn');
+      const checklistsMobileMenu = document.getElementById('checklistsMobileMenu');
+      if (checklistsMobileMenuBtn && checklistsMobileMenu) {
+        checklistsMobileMenuBtn.addEventListener('click', () => {
+          checklistsMobileMenu.classList.toggle('hidden');
+        });
+      }
+
       const searchInput = document.getElementById('checklistSearch');
       const catPills = document.querySelectorAll('.cat-pill');
       const cards = document.querySelectorAll('.checklist-card');

@@ -6,6 +6,7 @@
   <title>Sell Your Sports Cards & Collections | Instant Cash | Pocket Cash Cards</title>
   <meta name="description" content="Sell your baseball, football, basketball, and Pokémon card collections for instant cash. Top cash paid for vintage sets, modern rookies, and estates in Ardmore & Southern OK.">
   <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <link rel="canonical" href="https://getpocketcash.com/sell-cards.html">
   
   <meta property="og:title" content="We Buy Sports Cards & Collections for Cash | Pocket Cash Cards">
   <meta property="og:description" content="Looking to sell your sports cards? Get a fair cash offer or trade value from Pocket Cash Cards in Ardmore, OK.">
@@ -54,6 +55,7 @@
       <nav class="hidden md:flex items-center space-x-7 text-sm font-bold text-slate-200">
         <a href="index.html" class="hover:text-brand-primary transition-colors">Home</a>
         <a href="checklists/index.html" class="hover:text-brand-primary transition-colors">Checklists & Guides</a>
+        <a href="turntables/index.html" class="hover:text-brand-primary transition-colors">Audio Directory</a>
         <a href="ardmore.html" class="hover:text-brand-primary transition-colors">Ardmore Shop</a>
         <a href="shop.html" class="hover:text-brand-primary transition-colors flex items-center gap-1.5">
           <span>Shop</span>
@@ -67,7 +69,33 @@
         <a href="tel:4054597176" class="bg-brand-primary hover:bg-brand-primaryHover text-slate-950 font-black text-xs sm:text-sm px-4 py-2.5 rounded-xl shadow-lg transition">
           📞 Call (405) 459-7176
         </a>
+
+        <!-- Mobile Menu Button -->
+        <button id="sellMobileMenuBtn" type="button" aria-label="Toggle navigation menu" class="md:hidden p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-brand-primary">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
       </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="sellMobileMenu" class="hidden md:hidden bg-brand-navy border-b border-brand-border px-4 pt-3 pb-5 space-y-2">
+      <a href="index.html" class="block py-2 px-3 rounded-lg text-slate-200 hover:bg-slate-800 hover:text-brand-primary font-bold text-sm">Home</a>
+      <a href="checklists/index.html" class="block py-2 px-3 rounded-lg text-slate-200 hover:bg-slate-800 hover:text-brand-primary font-bold text-sm flex items-center justify-between">
+        <span>Checklists & Guides</span>
+        <span class="text-[10px] bg-brand-primary/20 text-brand-primary font-mono px-2 py-0.5 rounded-full border border-brand-primary/30">21 Sets</span>
+      </a>
+      <a href="turntables/index.html" class="block py-2 px-3 rounded-lg text-slate-200 hover:bg-slate-800 hover:text-amber-400 font-bold text-sm flex items-center justify-between">
+        <span>Audio Directory</span>
+        <span class="text-[10px] bg-amber-500/20 text-amber-300 font-mono px-2 py-0.5 rounded-full border border-amber-500/30">Parts Locator</span>
+      </a>
+      <a href="sell-cards.html" class="block py-2 px-3 rounded-lg text-brand-primary font-bold text-sm bg-brand-primary/10">Sell Your Cards</a>
+      <a href="shop.html" class="block py-2 px-3 rounded-lg text-slate-200 hover:bg-slate-800 hover:text-brand-primary font-bold text-sm">Shop (Soon)</a>
+      <a href="ardmore.html" class="block py-2 px-3 rounded-lg text-slate-200 hover:bg-slate-800 hover:text-brand-primary font-bold text-sm">Ardmore Retail Shop</a>
+      <a href="https://ebay.us/dpjwTn" target="_blank" rel="noopener noreferrer" class="block py-2 px-3 rounded-lg bg-brand-secondary/15 text-brand-secondary font-bold text-sm">
+        Shop Daily eBay Drops ↗
+      </a>
     </div>
   </header>
 
@@ -202,8 +230,30 @@
 
   <!-- Footer -->
   <footer class="mt-auto bg-slate-950 border-t border-brand-border text-slate-400 text-xs py-8 text-center">
-    <p>&copy; 2026 Pocket Cash Cards. 219 W. Main St. #64, Ardmore, OK 73401. (405) 459-7176.</p>
+    <div class="max-w-7xl mx-auto px-4 space-y-3">
+      <div class="flex flex-wrap justify-center gap-6 text-slate-300 font-semibold text-xs">
+        <a href="index.html" class="hover:text-brand-primary transition">Home</a>
+        <a href="checklists/index.html" class="hover:text-brand-primary transition">Checklists &amp; Guides (21 Sets)</a>
+        <a href="turntables/index.html" class="hover:text-amber-400 transition">Audio Directory</a>
+        <a href="shop.html" class="hover:text-brand-primary transition">Shop (Soon)</a>
+        <a href="ardmore.html" class="hover:text-brand-primary transition">Ardmore Shop</a>
+        <a href="https://ebay.us/dpjwTn" target="_blank" rel="noopener noreferrer" class="text-brand-secondary hover:text-brand-secondaryHover transition">eBay Store ↗</a>
+      </div>
+      <p>&copy; 2026 Pocket Cash Cards. 219 W. Main St. #64, Ardmore, OK 73401. (405) 459-7176.</p>
+    </div>
   </footer>
 
+  <!-- Mobile Navigation Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const sellMobileMenuBtn = document.getElementById('sellMobileMenuBtn');
+      const sellMobileMenu = document.getElementById('sellMobileMenu');
+      if (sellMobileMenuBtn && sellMobileMenu) {
+        sellMobileMenuBtn.addEventListener('click', () => {
+          sellMobileMenu.classList.toggle('hidden');
+        });
+      }
+    });
+  </script>
 </body>
 </html>

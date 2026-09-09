@@ -122,6 +122,11 @@
       <nav class="hidden md:flex items-center space-x-7 text-sm font-bold text-slate-200">
         <a href="../index.html" class="hover:text-brand-primary transition-colors">Home</a>
         <a href="index.html" class="text-brand-primary">Checklists & Guides</a>
+        <a href="../turntables/index.html" class="hover:text-brand-primary transition-colors">Audio Directory</a>
+        <a href="../shop.html" class="hover:text-brand-primary transition-colors flex items-center gap-1.5">
+          <span>Shop</span>
+          <span class="text-[10px] bg-brand-primary/20 text-brand-primary font-bold px-1.5 py-0.5 rounded-full border border-brand-primary/30">Soon</span>
+        </a>
         <a href="../ardmore.html" class="hover:text-brand-primary transition-colors">Ardmore Shop</a>
         <a href="../sell-cards.html" class="hover:text-brand-primary transition-colors">Sell Your Cards</a>
         <a href="https://ebay.us/dpjwTn" target="_blank" rel="noopener noreferrer" class="text-brand-secondary hover:text-brand-secondaryHover transition-colors flex items-center gap-1">
@@ -134,7 +139,29 @@
         <a href="https://ebay.us/dpjwTn" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 bg-brand-secondary hover:bg-brand-secondaryHover text-white text-xs sm:text-sm font-black px-4 py-2.5 rounded-xl shadow-lg hover:shadow-red-500/20 transition transform active:scale-95">
           Shop eBay Drops
         </a>
+              <!-- Mobile Menu Button -->
+        <button id="guideMobileMenuBtn" type="button" aria-label="Toggle navigation menu" class="md:hidden p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-brand-primary">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
       </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="guideMobileMenu" class="hidden md:hidden bg-brand-navy border-b border-brand-border px-4 pt-3 pb-5 space-y-2">
+      <a href="../index.html" class="block py-2 px-3 rounded-lg text-slate-200 hover:bg-slate-800 hover:text-brand-primary font-bold text-sm">Home</a>
+      <a href="index.html" class="block py-2 px-3 rounded-lg text-brand-primary font-bold text-sm bg-brand-primary/10">All Checklists & Guides (21 Sets)</a>
+      <a href="../turntables/index.html" class="block py-2 px-3 rounded-lg text-slate-200 hover:bg-slate-800 hover:text-amber-400 font-bold text-sm flex items-center justify-between">
+        <span>Audio Directory</span>
+        <span class="text-[10px] bg-amber-500/20 text-amber-300 font-mono px-2 py-0.5 rounded-full border border-amber-500/30">Parts Locator</span>
+      </a>
+      <a href="../shop.html" class="block py-2 px-3 rounded-lg text-slate-200 hover:bg-slate-800 hover:text-brand-primary font-bold text-sm">Shop (Soon)</a>
+      <a href="../ardmore.html" class="block py-2 px-3 rounded-lg text-slate-200 hover:bg-slate-800 hover:text-brand-primary font-bold text-sm">Ardmore Retail Shop</a>
+      <a href="../sell-cards.html" class="block py-2 px-3 rounded-lg text-slate-200 hover:bg-slate-800 hover:text-brand-primary font-bold text-sm">Sell Your Cards</a>
+      <a href="https://ebay.us/dpjwTn" target="_blank" rel="noopener noreferrer" class="block py-2 px-3 rounded-lg bg-brand-secondary/15 text-brand-secondary font-bold text-sm">
+        Shop Daily eBay Drops ↗
+      </a>
     </div>
   </header>
 
@@ -916,6 +943,53 @@
     </div>
   </section>
 
+  <!-- Explore More Guides & Directories -->
+  <section class="py-10 bg-slate-950 border-t border-brand-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-6">
+        <div>
+          <h3 class="text-lg font-black text-white">Explore More Collector Checklists &amp; Guides</h3>
+          <p class="text-slate-400 text-xs">Floor price trackers, print run estimates, and key chase guides across 21 niche releases.</p>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="index.html" class="inline-flex items-center gap-1 text-brand-primary hover:underline text-xs font-bold">
+            View All 21 Checklists →
+          </a>
+          <span class="text-slate-700">•</span>
+          <a href="../turntables/index.html" class="inline-flex items-center gap-1 text-amber-400 hover:underline text-xs font-bold">
+            🎧 Audio Parts Guide →
+          </a>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 text-xs">
+        <a href="2026-choice-banana-ball.html" class="p-3 rounded-xl bg-brand-card hover:bg-slate-800 border border-brand-border text-slate-200 font-bold transition flex flex-col justify-between">
+          <span>Banana Ball</span>
+          <span class="text-[10px] text-amber-400 font-mono mt-1">2026 Choice</span>
+        </a>
+        <a href="2024-scc-kbo-league.html" class="p-3 rounded-xl bg-brand-card hover:bg-slate-800 border border-brand-border text-slate-200 font-bold transition flex flex-col justify-between">
+          <span>KBO Baseball</span>
+          <span class="text-[10px] text-emerald-400 font-mono mt-1">2024 SCC</span>
+        </a>
+        <a href="2023-bbm-npb-baseball-1st.html" class="p-3 rounded-xl bg-brand-card hover:bg-slate-800 border border-brand-border text-slate-200 font-bold transition flex flex-col justify-between">
+          <span>NPB Baseball</span>
+          <span class="text-[10px] text-emerald-400 font-mono mt-1">2023 BBM 1st</span>
+        </a>
+        <a href="2022-topps-pll-lacrosse.html" class="p-3 rounded-xl bg-brand-card hover:bg-slate-800 border border-brand-border text-slate-200 font-bold transition flex flex-col justify-between">
+          <span>PLL Lacrosse</span>
+          <span class="text-[10px] text-cyan-400 font-mono mt-1">2022 Topps</span>
+        </a>
+        <a href="2023-leaf-pickleball.html" class="p-3 rounded-xl bg-brand-card hover:bg-slate-800 border border-brand-border text-slate-200 font-bold transition flex flex-col justify-between">
+          <span>Pickleball</span>
+          <span class="text-[10px] text-purple-400 font-mono mt-1">2023 Leaf</span>
+        </a>
+        <a href="1988-ballpark-capecod-prospects.html" class="p-3 rounded-xl bg-brand-card hover:bg-slate-800 border border-brand-border text-slate-200 font-bold transition flex flex-col justify-between">
+          <span>Cape Cod League</span>
+          <span class="text-[10px] text-amber-400 font-mono mt-1">1988 Ballpark</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="bg-brand-navy border-t border-brand-border py-12 mt-auto text-xs text-slate-400">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
@@ -947,6 +1021,15 @@
   <!-- Search & Filter JavaScript -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      // Mobile Menu Toggle
+      const guideMobileMenuBtn = document.getElementById('guideMobileMenuBtn');
+      const guideMobileMenu = document.getElementById('guideMobileMenu');
+      if (guideMobileMenuBtn && guideMobileMenu) {
+        guideMobileMenuBtn.addEventListener('click', () => {
+          guideMobileMenu.classList.toggle('hidden');
+        });
+      }
+
       const searchInput = document.getElementById('searchInput');
       const filterBtns = document.querySelectorAll('.filter-btn');
       const cards = document.querySelectorAll('.card-item');
