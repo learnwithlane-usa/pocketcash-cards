@@ -56,6 +56,20 @@ document.addEventListener('DOMContentLoaded', () => {
             transport_type: 'beacon'
           });
         }
+      } else if (href.includes('amazon.com') || href.includes('amzn.to')) {
+        gtag('event', 'click_affiliate_amazon', {
+          event_category: 'affiliate_amazon',
+          event_label: label || 'Amazon Associate Product',
+          link_url: href,
+          transport_type: 'beacon'
+        });
+      } else if (href.includes('supplies.html')) {
+        gtag('event', 'click_supplies_guide', {
+          event_category: 'internal_promotion',
+          event_label: label || 'Supplies Guide Link',
+          link_url: href,
+          transport_type: 'beacon'
+        });
       } else if (href.includes('litcards.store')) {
         gtag('event', 'click_litcards_exchange', {
           event_category: 'outbound_exchange',
