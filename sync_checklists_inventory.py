@@ -107,19 +107,34 @@ def sync_inventory():
             inner_html = m.group(2)
 
             if item_id in active_items:
-                # Active in DB: verify price
+                # Active in DB: verify price and ensure full EPN affiliate tracking
                 expected_price = active_items[item_id]['price']
-                price_pattern = r'Buy in Store \(\$([0-9\.]+)\)'
+                price_pattern = r'(?:⚡\s*)?Buy\s+(?:PC Copy|in Store)\s*\(\$([0-9\.]+)\)'
                 price_match = re.search(price_pattern, inner_html)
+                
+                new_match = full_match
+                # Ensure EPN tracking parameters are on the URL
+                target_url = f"https://www.ebay.com/itm/{item_id}?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid={AFFILIATE_CAMPID}&toolid=10001&mkevt=1"
+                if f"campid={AFFILIATE_CAMPID}" not in new_match:
+                    new_match = re.sub(r'href=["\']https?://(?:www\.)?ebay\.com/itm/\d+[^"\']*["\']', f'href="{target_url}"', new_match)
+                
+                # Ensure rel="sponsored noopener noreferrer"
+                if 'rel=' in new_match:
+                    new_match = re.sub(r'rel=["\'][^"\']*["\']', 'rel="sponsored noopener noreferrer"', new_match)
+                else:
+                    new_match = new_match.replace('<a ', '<a rel="sponsored noopener noreferrer" ')
+
                 if price_match:
                     current_price = float(price_match.group(1))
                     if abs(current_price - expected_price) > 0.01:
-                        new_text = f"Buy in Store (${expected_price:.2f})"
-                        new_match = full_match.replace(f"Buy in Store (${price_match.group(1)})", new_text)
-                        modified_content = modified_content.replace(full_match, new_match)
-                        file_changed = True
+                        prefix = "⚡ Buy PC Copy" if "PC Copy" in price_match.group(0) else "Buy in Store"
+                        new_match = new_match.replace(price_match.group(0), f"{prefix} (${expected_price:.2f})")
                         total_prices_updated += 1
                         log(f"[{fname}] Price update for item {item_id}: ${current_price:.2f} -> ${expected_price:.2f}")
+
+                if new_match != full_match:
+                    modified_content = modified_content.replace(full_match, new_match)
+                    file_changed = True
             else:
                 # NOT active in DB (sold or ended): remove store button
                 reason = "ENDED" if item_id in non_active_items else "DELISTED"
