@@ -164,6 +164,10 @@ def sync_inventory():
             code_push, out_push, err_push = run_cmd("git push origin main")
             if code_push == 0:
                 log("Git push successful! Live site updated.")
+                indexnow_script = r"G:\AI\scripts\submit_indexnow.py"
+                if os.path.exists(indexnow_script):
+                    log("Pinging IndexNow (Bing/Yandex) with updated URLs...")
+                    run_cmd(f'python "{indexnow_script}"')
             else:
                 log(f"WARNING: Git push failed: {err_push}")
         else:
