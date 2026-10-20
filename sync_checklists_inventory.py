@@ -239,8 +239,8 @@ def sync_inventory():
         cfg_scripts = r"C:\Users\dee\.gemini\config\scripts"
         if cfg_scripts not in sys.path:
             sys.path.insert(0, cfg_scripts)
-        from epn_monitor import check_conversions
-        check_conversions(windows=3, alert_max_age_days=7)
+        from epn_monitor import sync_epn_conversions
+        sync_epn_conversions()
         log("EPN conversion monitor completed.")
     except Exception as epn_err:
         log(f"Notice: EPN conversion monitor skipped: {epn_err}")
