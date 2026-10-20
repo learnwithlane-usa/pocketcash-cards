@@ -132,8 +132,8 @@ def sync_inventory():
                 price_match = re.search(price_pattern, inner_html)
                 
                 new_match = full_match
-                target_url = f"https://www.ebay.com/itm/{item_id}?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid={AFFILIATE_CAMPID}&toolid=10001&mkevt=1"
-                if f"campid={AFFILIATE_CAMPID}" not in new_match:
+                target_url = f"https://www.ebay.com/itm/{item_id}?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid={AFFILIATE_CAMPID}&customid=pc_copy_{item_id}&toolid=10001&mkevt=1"
+                if f"campid={AFFILIATE_CAMPID}" not in new_match or f"customid=pc_copy_{item_id}" not in new_match:
                     new_match = re.sub(r'href=["\']https?://(?:www\.)?ebay\.com/itm/\d+[^"\']*["\']', f'href="{target_url}"', new_match)
                 
                 if 'rel=' in new_match:
@@ -188,7 +188,7 @@ def sync_inventory():
                         matched_item = it
                         break
                 if matched_item:
-                    inv_url = f"https://www.ebay.com/itm/{matched_item['item_id']}?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid={AFFILIATE_CAMPID}&toolid=10001&mkevt=1"
+                    inv_url = f"https://www.ebay.com/itm/{matched_item['item_id']}?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid={AFFILIATE_CAMPID}&customid=pc_copy_{matched_item['item_id']}&toolid=10001&mkevt=1"
                     inv_price = f"{matched_item['price']:.2f}"
                     injected_btn = (
                         f'<a href="{inv_url}" target="_blank" rel="sponsored noopener noreferrer" '
