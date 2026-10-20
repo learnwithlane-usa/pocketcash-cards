@@ -234,6 +234,17 @@ def sync_inventory():
     else:
         log("Sync complete: All checklists are in sync. 0 changes needed.")
 
+    # 3. Run EPN Affiliate Conversion Monitor (syncs Impact/EPN API to pocket_cash_cards.db)
+    try:
+        cfg_scripts = r"C:\Users\dee\.gemini\config\scripts"
+        if cfg_scripts not in sys.path:
+            sys.path.insert(0, cfg_scripts)
+        from epn_monitor import run_monitor
+        run_monitor(alert_max_age_days=7)
+        log("EPN conversion monitor completed.")
+    except Exception as epn_err:
+        log(f"Notice: EPN conversion monitor skipped: {epn_err}")
+
     return True
 
 
