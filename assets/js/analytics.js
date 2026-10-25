@@ -14,8 +14,11 @@ gtag('config', 'G-7S9BWRF1C4', {
 
 // Outbound & Conversion Click Handler
 document.addEventListener('DOMContentLoaded', () => {
+  const defaultSetTitle = (document.title.split('|')[0] || 'Pocket Cash Checklist').trim();
+  const isTurntablesPage = window.location.pathname.includes('/turntables');
+
   document.querySelectorAll('a, button').forEach(el => {
-    el.addEventListener('click', (e) => {
+    el.addEventListener('click', () => {
       const href = el.getAttribute('href') || '';
       const customEvent = el.dataset.gaEvent;
       const category = el.dataset.gaCategory || 'engagement';
@@ -38,9 +41,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (cardParent) {
           const cardNum = cardParent.getAttribute('data-number') || '';
           const cardPlayer = cardParent.getAttribute('data-player') || cardParent.getAttribute('data-name') || '';
-          const cardTeam = cardParent.getAttribute('data-team') || 'PDC Darts';
-          gtag('event', 'click_affiliate_card', {
-            event_category: 'affiliate_epn',
+          const cardTeam = cardParent.getAttribute('data-team') || defaultSetTitle;
+          const isDirectStoreItem = href.includes('ebay.com/itm/') || href.includes('_ssn=pocketcash');
+          gtag('event', isDirectStoreItem ? 'click_pc_ebay_item' : 'click_affiliate_card', {
+            event_category: isDirectStoreItem ? 'pc_ebay_store' : 'affiliate_epn',
             event_label: `#${cardNum} ${cardPlayer} (${cardTeam})`,
             card_number: cardNum,
             card_player: cardPlayer,
@@ -49,16 +53,16 @@ document.addEventListener('DOMContentLoaded', () => {
             transport_type: 'beacon'
           });
         } else {
-          gtag('event', 'click_ebay_store', {
-            event_category: 'outbound_ecommerce',
-            event_label: label || 'eBay Store',
+          gtag('event', isTurntablesPage ? 'click_turntable_ebay' : 'click_ebay_store', {
+            event_category: isTurntablesPage ? 'affiliate_turntables' : 'outbound_ecommerce',
+            event_label: label || 'eBay Link',
             link_url: href,
             transport_type: 'beacon'
           });
         }
       } else if (href.includes('amazon.com') || href.includes('amzn.to')) {
-        gtag('event', 'click_affiliate_amazon', {
-          event_category: 'affiliate_amazon',
+        gtag('event', isTurntablesPage ? 'click_turntable_amazon' : 'click_affiliate_amazon', {
+          event_category: isTurntablesPage ? 'affiliate_turntables' : 'affiliate_amazon',
           event_label: label || 'Amazon Associate Product',
           link_url: href,
           transport_type: 'beacon'
@@ -70,10 +74,10 @@ document.addEventListener('DOMContentLoaded', () => {
           link_url: href,
           transport_type: 'beacon'
         });
-      } else if (href.includes('litcards.store')) {
-        gtag('event', 'click_litcards_exchange', {
-          event_category: 'outbound_exchange',
-          event_label: label || 'Litcards Marketplace',
+      } else if (href.includes('ardmore.html')) {
+        gtag('event', 'click_ardmore_showcase', {
+          event_category: 'local_store',
+          event_label: label || 'Ardmore Booth #64 Page',
           link_url: href,
           transport_type: 'beacon'
         });
@@ -88,6 +92,20 @@ document.addEventListener('DOMContentLoaded', () => {
         gtag('event', 'click_phone_call', {
           event_category: 'contact',
           event_label: href.replace('tel:', ''),
+          transport_type: 'beacon'
+        });
+      } else if (href.startsWith('sms:')) {
+        gtag('event', 'click_sms_text', {
+          event_category: 'lead_generation',
+          event_label: label || 'SMS Text Inquiry',
+          link_url: href,
+          transport_type: 'beacon'
+        });
+      } else if (href.endsWith('.pdf')) {
+        gtag('event', 'click_pdf_download', {
+          event_category: 'lead_generation',
+          event_label: label || href,
+          link_url: href,
           transport_type: 'beacon'
         });
       } else if (href.startsWith('mailto:')) {
@@ -114,9 +132,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Track Checklist View Events
+  // Track Checklist & Directory View Events
   if (window.location.pathname.includes('/checklists/')) {
     gtag('event', 'view_checklist_guide', {
+      event_category: 'content_engagement',
+      event_label: document.title,
+      page_path: window.location.pathname
+    });
+  } else if (isTurntablesPage) {
+    gtag('event', 'view_turntable_directory', {
       event_category: 'content_engagement',
       event_label: document.title,
       page_path: window.location.pathname
