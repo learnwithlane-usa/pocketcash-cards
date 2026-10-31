@@ -226,6 +226,31 @@
             Your trusted destination for raw vintage stars, modern rookie cards, rare international imports, and hobby supplies. Visit our retail booth in Ardmore, OK, or browse our daily eBay drops with $1 combined shipping.
           </p>
 
+          <!-- Live Pocket Cash eBay Storefront Search Box (EPN Integrated) -->
+          <form id="pcHomeSearchForm" class="pt-2">
+            <div class="flex flex-col sm:flex-row gap-2.5 bg-slate-900/90 p-2.5 rounded-2xl border border-brand-primary/40 shadow-2xl">
+              <div class="relative flex-1">
+                <input 
+                  type="text" 
+                  id="pcHomeQuery" 
+                  placeholder="Search 10,500+ cards on eBay (e.g. Savannah Bananas, IndyCar, CPBL, Rodeo)..." 
+                  class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3.5 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-brand-primary transition"
+                >
+              </div>
+              <button type="submit" class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-black px-6 py-3.5 rounded-xl shadow-lg transition transform active:scale-95 text-sm shrink-0">
+                <span>🔍 Search eBay Store</span>
+              </button>
+            </div>
+            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2 pt-2.5 text-xs text-slate-400">
+              <span class="font-bold text-slate-300">Popular:</span>
+              <a href="https://www.ebay.com/sch/i.html?_ssn=pocketcash&amp;_nkw=2026+Banana+Ball&amp;_sop=12&amp;mkcid=1&amp;mkrid=711-53200-19255-0&amp;siteid=0&amp;campid=5339204284&amp;customid=home_chip_banana&amp;toolid=10001&amp;mkevt=1" target="_blank" rel="sponsored noopener noreferrer" class="px-2 py-0.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-amber-300 border border-amber-500/30 font-medium transition">🍌 Banana Ball</a>
+              <a href="https://www.ebay.com/sch/i.html?_ssn=pocketcash&amp;_nkw=2026+Parkside+IndyCar&amp;_sop=12&amp;mkcid=1&amp;mkrid=711-53200-19255-0&amp;siteid=0&amp;campid=5339204284&amp;customid=home_chip_indy&amp;toolid=10001&amp;mkevt=1" target="_blank" rel="sponsored noopener noreferrer" class="px-2 py-0.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-emerald-300 border border-emerald-500/30 font-medium transition">🏎️ IndyCar</a>
+              <a href="https://www.ebay.com/sch/i.html?_ssn=pocketcash&amp;_nkw=1994+CPBL&amp;_sop=12&amp;mkcid=1&amp;mkrid=711-53200-19255-0&amp;siteid=0&amp;campid=5339204284&amp;customid=home_chip_cpbl&amp;toolid=10001&amp;mkevt=1" target="_blank" rel="sponsored noopener noreferrer" class="px-2 py-0.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-cyan-300 border border-cyan-500/30 font-medium transition">⚾ Taiwan CPBL</a>
+              <a href="https://www.ebay.com/sch/i.html?_ssn=pocketcash&amp;_nkw=1995+High+Gear+Rodeo&amp;_sop=12&amp;mkcid=1&amp;mkrid=711-53200-19255-0&amp;siteid=0&amp;campid=5339204284&amp;customid=home_chip_rodeo&amp;toolid=10001&amp;mkevt=1" target="_blank" rel="sponsored noopener noreferrer" class="px-2 py-0.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-brand-cream border border-brand-cream/30 font-medium transition">🤠 PRCA Rodeo</a>
+            </div>
+          </form>
+
+
           <!-- Fast Action Links for Mobile & Desktop -->
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 pt-2">
             <a href="checklists/index.html" class="flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-700 text-brand-primary font-bold py-3.5 px-4 rounded-xl border border-brand-primary/40 shadow-md transition text-sm group">
@@ -753,6 +778,27 @@
         });
       }
     });
+    // Live eBay Store Search Handler (Home Hero)
+    const homeSearchForm = document.getElementById('pcHomeSearchForm');
+    if (homeSearchForm) {
+      homeSearchForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const q = (document.getElementById('pcHomeQuery').value || '').trim();
+        const epnBase = 'https://www.ebay.com/sch/i.html?_ssn=pocketcash&_sop=12&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339204284&toolid=10001&mkevt=1';
+        const url = q 
+          ? `${epnBase}&customid=home_search_submit&_nkw=${encodeURIComponent(q)}`
+          : 'https://www.ebay.com/str/pocketcash?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339204284&customid=home_search_empty&toolid=10001&mkevt=1';
+        if (typeof gtag === 'function') {
+          gtag('event', 'click_ebay_store', {
+            event_category: 'outbound_ecommerce',
+            event_label: `Home Search: ${q || 'All'}`,
+            link_url: url,
+            transport_type: 'beacon'
+          });
+        }
+        window.open(url, '_blank', 'noopener,noreferrer');
+      });
+    }
   </script>
 </body>
 </html>
