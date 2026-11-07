@@ -15,7 +15,6 @@ gtag('config', 'G-7S9BWRF1C4', {
 // Outbound & Conversion Click Handler
 document.addEventListener('DOMContentLoaded', () => {
   const defaultSetTitle = (document.title.split('|')[0] || 'Pocket Cash Checklist').trim();
-  const isTurntablesPage = window.location.pathname.includes('/turntables');
 
   document.querySelectorAll('a, button').forEach(el => {
     el.addEventListener('click', () => {
@@ -53,16 +52,16 @@ document.addEventListener('DOMContentLoaded', () => {
             transport_type: 'beacon'
           });
         } else {
-          gtag('event', isTurntablesPage ? 'click_turntable_ebay' : 'click_ebay_store', {
-            event_category: isTurntablesPage ? 'affiliate_turntables' : 'outbound_ecommerce',
+          gtag('event', 'click_ebay_store', {
+            event_category: 'outbound_ecommerce',
             event_label: label || 'eBay Link',
             link_url: href,
             transport_type: 'beacon'
           });
         }
       } else if (href.includes('amazon.com') || href.includes('amzn.to')) {
-        gtag('event', isTurntablesPage ? 'click_turntable_amazon' : 'click_affiliate_amazon', {
-          event_category: isTurntablesPage ? 'affiliate_turntables' : 'affiliate_amazon',
+        gtag('event', 'click_affiliate_amazon', {
+          event_category: 'affiliate_amazon',
           event_label: label || 'Amazon Associate Product',
           link_url: href,
           transport_type: 'beacon'
@@ -135,12 +134,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Track Checklist & Directory View Events
   if (window.location.pathname.includes('/checklists/')) {
     gtag('event', 'view_checklist_guide', {
-      event_category: 'content_engagement',
-      event_label: document.title,
-      page_path: window.location.pathname
-    });
-  } else if (isTurntablesPage) {
-    gtag('event', 'view_turntable_directory', {
       event_category: 'content_engagement',
       event_label: document.title,
       page_path: window.location.pathname
