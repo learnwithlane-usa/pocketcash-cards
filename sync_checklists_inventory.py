@@ -28,7 +28,7 @@ sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 # Directory Paths
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CHECKLISTS_DIR = os.path.join(BASE_DIR, "checklists")
-DB_PATH = r"C:\Users\dee\.gemini\antigravity\scratch\tools\pocket_cash_cards.db"
+DB_PATH = r"G:\Tools\data\pocket_cash_cards.db"
 LOG_FILE = os.path.join(BASE_DIR, "sync_checklists.log")
 AFFILIATE_CAMPID = "5339204284"
 
@@ -73,7 +73,7 @@ def run_cmd(cmd, cwd=BASE_DIR):
 def sync_inventory(deploy=True):
     log("Starting Pocket Cash bidirectional checklist inventory sync...")
 
-    tools_dir = r"C:\Users\dee\.gemini\antigravity\scratch\tools"
+    tools_dir = r"G:\AI\scratch\tools"
     if tools_dir not in sys.path:
         sys.path.insert(0, tools_dir)
     try:
@@ -311,7 +311,7 @@ def sync_inventory(deploy=True):
                     indexnow_script = r"G:\AI\scripts\submit_indexnow.py"
                     if os.path.exists(indexnow_script):
                         log("Pinging IndexNow (Bing/Yandex) with updated URLs...")
-                        run_cmd(f'python "{indexnow_script}"')
+                        run_cmd(f'G:\\Tools\\venv\\Scripts\\python.exe "{indexnow_script}"')
                 else:
                     log(f"WARNING: Git push failed: {err_push}")
             else:
