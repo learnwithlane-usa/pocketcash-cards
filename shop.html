@@ -108,10 +108,23 @@
       <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
         Pocket Cash <span class="bg-gradient-to-r from-brand-primary via-brand-cream to-brand-secondary bg-clip-text text-transparent">Top 10 eBay Vault</span>
       </h1>
-      
-      <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-        The <strong>10 highest-priced slabs, autographs, relics, and rare SPs</strong> currently live in our eBay store—automatically ranked by price with actual front &amp; back card scans pulled directly from eBay.
-      </p>
+
+      <!-- Live Pocket Cash eBay Storefront Search Box -->
+      <form id="pcStoreSearchForm" class="max-w-2xl mx-auto pt-2">
+        <div class="flex flex-col sm:flex-row gap-2.5 bg-slate-900/90 p-2.5 rounded-2xl border border-brand-primary/40 shadow-2xl">
+          <div class="relative flex-1">
+            <input 
+              type="text" 
+              id="pcStoreQuery" 
+              placeholder="Search our 10,500+ cards (e.g. Shohei Ohtani, Banana Ball, IndyCar, Vintage)..." 
+              class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3.5 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-brand-primary transition"
+            >
+          </div>
+          <button type="submit" class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-black px-6 py-3.5 rounded-xl shadow-lg transition transform active:scale-95 text-sm shrink-0">
+            <span>🔍 Search Our eBay Store</span>
+          </button>
+        </div>
+      </form>
 
       <div class="pt-2 flex items-center justify-center">
         <a href="https://www.ebay.com/str/pocketcash?mkcid=1&amp;mkrid=711-53200-19255-0&amp;siteid=0&amp;campid=5339204284&amp;customid=shop_hero_ebay&amp;toolid=10001&amp;mkevt=1" target="_blank" rel="sponsored noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-brand-secondary hover:bg-brand-secondaryHover text-white font-black px-7 py-3.5 rounded-xl shadow-xl transition transform hover:-translate-y-0.5 text-sm">
@@ -543,6 +556,31 @@
 
       PRODUCTS.slice(0, 2).forEach(p => spotlight.appendChild(buildCard(p, true)));
       PRODUCTS.slice(2).forEach(p => grid.appendChild(buildCard(p, false)));
+    }
+
+    const CAMPID = '5339204284';
+    function epnStoreSearch(nkw, custom) {
+      return `https://www.ebay.com/sch/i.html?_ssn=pocketcash&_nkw=${encodeURIComponent(nkw)}&_sop=12&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=${CAMPID}&customid=${custom}&toolid=10001&mkevt=1`;
+    }
+
+    const searchForm = document.getElementById('pcStoreSearchForm');
+    if (searchForm) {
+      searchForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const q = (document.getElementById('pcStoreQuery').value || '').trim();
+        const url = q
+          ? epnStoreSearch(q, 'shop_search_submit')
+          : `https://www.ebay.com/str/pocketcash?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=${CAMPID}&customid=shop_search_empty&toolid=10001&mkevt=1`;
+        if (typeof gtag === 'function') {
+          gtag('event', 'click_ebay_store', {
+            event_category: 'outbound_ecommerce',
+            event_label: `Store Search: ${q || 'All'}`,
+            link_url: url,
+            transport_type: 'beacon'
+          });
+        }
+        window.open(url, '_blank', 'noopener,noreferrer');
+      });
     }
 
     renderProducts();
