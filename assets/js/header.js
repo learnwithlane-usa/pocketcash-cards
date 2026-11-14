@@ -19,9 +19,7 @@
     active = 'shop';
   } else if (/\/ardmore(\.html)?$/.test(path)) {
     active = 'ardmore';
-  } else if (/\/sell-cards(\.html)?$/.test(path)) {
-    active = 'sell';
-  } else if (/\/consignment(\.html)?$/.test(path)) {
+  } else if (/\/(consignment|sell-cards)(\.html)?$/.test(path)) {
     active = 'consignment';
   }
 
@@ -62,7 +60,6 @@
     '        <span class="text-[10px] bg-brand-primary/20 text-brand-primary font-bold px-1.5 py-0.5 rounded-full border border-brand-primary/30">Live</span>',
     '      </a>',
     '      <a href="' + base + 'ardmore.html" class="' + desktopLinkClass('ardmore') + '"' + ariaCurrent('ardmore') + '>Ardmore Shop</a>',
-    '      <a href="' + base + 'sell-cards.html" class="' + desktopLinkClass('sell') + '"' + ariaCurrent('sell') + '>Sell Your Cards</a>',
     '      <a href="' + base + 'consignment.html" class="' + (active === 'consignment' ? 'text-brand-primary' : 'text-amber-300 hover:text-amber-200 transition-colors') + ' flex items-center gap-1.5 font-black"' + ariaCurrent('consignment') + '>',
     '        <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>',
     '        <span>Local Consignment</span>',
@@ -109,7 +106,6 @@
     '      <span class="text-[10px] bg-brand-primary/20 text-brand-primary font-bold px-1.5 py-0.5 rounded-full border border-brand-primary/30">Live</span>',
     '    </a>',
     '    <a href="' + base + 'ardmore.html" class="' + mobileLinkClass('ardmore') + '"' + ariaCurrent('ardmore') + '>Ardmore Retail Shop</a>',
-    '    <a href="' + base + 'sell-cards.html" class="' + mobileLinkClass('sell') + '"' + ariaCurrent('sell') + '>Sell Your Cards</a>',
     '    <a href="' + base + 'consignment.html" class="' + (active === 'consignment' ? 'block py-2 px-3 rounded-lg text-brand-primary font-bold text-sm bg-brand-primary/10 flex items-center justify-between' : 'block py-2 px-3 rounded-lg text-amber-300 hover:bg-slate-800 font-bold text-sm flex items-center justify-between') + '"' + ariaCurrent('consignment') + '>',
     '      <span>Local eBay Consignment</span>',
     '      <span class="text-[10px] bg-amber-400/20 text-amber-300 font-bold px-1.5 py-0.5 rounded-full border border-amber-400/30">Keep up to 85%</span>',
