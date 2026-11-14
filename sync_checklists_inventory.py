@@ -291,15 +291,23 @@ def sync_inventory(deploy=True):
             total_files_modified += 1
             log(f"Updated {fname}")
 
+    # Also sync shop.html showcase images & active eBay hits (0 LLM tokens)
+    shop_changed = False
+    try:
+        from sync_shop_showcase import sync_shop_showcase
+        shop_changed = sync_shop_showcase(force_images=False, deploy=False)
+    except Exception as shop_err:
+        log(f"Notice: Shop showcase sync skipped: {shop_err}")
+
     # Summary & Git Deployment
-    if total_files_modified > 0:
+    if total_files_modified > 0 or shop_changed:
         log(
-            f"Sync complete: {total_files_modified} files modified. ({total_links_injected} PC links injected, {total_links_removed} dead links purged, {total_prices_updated} prices refreshed)."
+            f"Sync complete: {total_files_modified} checklist files modified, shop_changed={shop_changed}. ({total_links_injected} PC links injected, {total_links_removed} dead links purged, {total_prices_updated} prices refreshed)."
         )
 
         if deploy:
             log("Deploying updates to GitHub Pages (origin main)...")
-            run_cmd("git add checklists/*.html")
+            run_cmd("git add checklists/*.html shop.html assets/images/shop")
             date_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
             commit_msg = f"Automated bidirectional inventory sync: +{total_links_injected} active PC links, -{total_links_removed} ended [{date_str}]"
             code, out, err = run_cmd(f'git commit -m "{commit_msg}"')

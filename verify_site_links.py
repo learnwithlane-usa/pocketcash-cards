@@ -3,16 +3,17 @@ import re
 
 site_dir = r"C:\Users\dee\.gemini\antigravity\scratch\pocketcash-site"
 
-for html_file in ["index.html", "ardmore.html"]:
+for html_file in ["index.html", "ardmore.html", "shop.html"]:
     fpath = os.path.join(site_dir, html_file)
     with open(fpath, "r", encoding="utf-8") as f:
         content = f.read()
 
     srcs = re.findall(r'(?:src|srcset)=["\']([^"\']+)["\']', content)
+    srcs += re.findall(r'"(?:image|backImage)"\s*:\s*"([^"]+)"', content)
     print(f"Checking {html_file}: {len(srcs)} media references...")
     missing = []
     for s in srcs:
-        if s.startswith(("http://", "https://", "data:", "mailto:", "tel:")):
+        if s.startswith(("http://", "https://", "data:", "mailto:", "tel:", "${")):
             continue
         local_s = s.split("?")[0].split("#")[0]
         full_p = os.path.normpath(os.path.join(site_dir, local_s))

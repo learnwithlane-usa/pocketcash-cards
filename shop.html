@@ -351,351 +351,538 @@
       return `https://www.ebay.com/sch/i.html?_ssn=pocketcash&_nkw=${encodeURIComponent(nkw)}&_sop=12&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=${CAMPID}&customid=${custom}&toolid=10001&mkevt=1`;
     }
 
+    // SHOP_PRODUCTS_START
     const PRODUCTS = [
-      // --- 1. FEATURED LIVE HITS (Real Active eBay Inventory) ---
       {
-        category: 'featured-hits',
-        badge: '1/1 Masterpiece SSP',
-        statusBadge: 'In Stock on eBay',
-        title: '2026 Parkside IndyCar Jonathan Browne 1/1 ONE OF ONE',
-        subtitle: 'Chip Ganassi Racing Indy NXT • True 1/1 Grail',
-        price: '$129.99',
-        specs: ['Exact card scanned front & back', 'True 1-of-1 pack-pulled SSP', 'Armored Ground Advantage shipping'],
-        icon: '🏎️',
-        imageBg: 'from-amber-950/70 to-slate-900',
-        ctaText: '⚡ Buy on eBay ($129.99) ↗',
-        ctaUrl: epnItm('227507968586'),
-        external: true
+            "category": "featured-hits",
+            "ebayItemId": "227507968586",
+            "badge": "1/1 Masterpiece SSP",
+            "statusBadge": "In Stock on eBay",
+            "title": "2026 Parkside IndyCar Jonathan Browne 1/1 ONE OF ONE",
+            "subtitle": "Chip Ganassi Racing Indy NXT • True 1/1 Grail",
+            "price": "$129.99",
+            "specs": [
+                  "Exact card scanned front & back",
+                  "True 1-of-1 pack-pulled SSP",
+                  "Armored Ground Advantage shipping"
+            ],
+            "icon": "🏎️",
+            "image": "assets/images/shop/227507968586_front.webp",
+            "backImage": "assets/images/shop/227507968586_back.webp",
+            "imageFit": "contain",
+            "imageAlt": "2026 Parkside IndyCar Jonathan Browne 1/1 ONE OF ONE - actual eBay card scan",
+            "imageBg": "from-amber-950/70 to-slate-900",
+            "ctaText": "⚡ Buy on eBay ($129.99) ↗",
+            "ctaUrl": "https://www.ebay.com/itm/227507968586?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339204284&customid=shop_hit_227507968586&toolid=10001&mkevt=1",
+            "external": true
       },
       {
-        category: 'featured-hits',
-        badge: 'On-Card Auto /100',
-        statusBadge: 'In Stock on eBay',
-        title: "2026 Choice Banana Ball Mo'ne Davis RC AUTO /100 #29",
-        subtitle: 'Indianapolis Clowns • Serial Numbered /100 Rookie Auto',
-        price: '$102.99',
-        specs: ['Authenticated Choice BBCL Autograph', 'Flagship #29 Rookie Card', 'Ships in magnetic One-Touch armor'],
-        icon: '🍌',
-        imageBg: 'from-yellow-950/70 to-slate-900',
-        ctaText: '⚡ Buy on eBay ($102.99) ↗',
-        ctaUrl: epnItm('227507968574'),
-        external: true
+            "category": "featured-hits",
+            "ebayItemId": "227507968574",
+            "badge": "On-Card Auto /100",
+            "statusBadge": "In Stock on eBay",
+            "title": "2026 Choice Banana Ball Mo'ne Davis RC AUTO /100 #29",
+            "subtitle": "Indianapolis Clowns • Serial Numbered /100 Rookie Auto",
+            "price": "$102.99",
+            "specs": [
+                  "Authenticated Choice BBCL Autograph",
+                  "Flagship #29 Rookie Card",
+                  "Ships in magnetic One-Touch armor"
+            ],
+            "icon": "🍌",
+            "image": "assets/images/shop/227507968574_front.webp",
+            "backImage": "assets/images/shop/227507968574_back.webp",
+            "imageFit": "contain",
+            "imageAlt": "2026 Choice Banana Ball Mo'ne Davis RC AUTO /100 #29 - actual eBay card scan",
+            "imageBg": "from-yellow-950/70 to-slate-900",
+            "ctaText": "⚡ Buy on eBay ($102.99) ↗",
+            "ctaUrl": "https://www.ebay.com/itm/227507968574?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339204284&customid=shop_hit_227507968574&toolid=10001&mkevt=1",
+            "external": true
       },
       {
-        category: 'featured-hits',
-        badge: 'Case Hit SSP 3/6',
-        statusBadge: 'In Stock on eBay',
-        title: '2026 Parkside IndyCar Nolan Siegel Numerics SSP 3/6',
-        subtitle: 'Arrow McLaren • Ultra-Rare Serial Numbered 3/6 Insert',
-        price: '$54.99',
-        specs: ['Serial-numbered 3 of only 6 made', 'Arrow McLaren IndyCar rising star', 'High-res front & back scans'],
-        icon: '🏁',
-        imageBg: 'from-orange-950/70 to-slate-900',
-        ctaText: '⚡ Buy on eBay ($54.99) ↗',
-        ctaUrl: epnItm('298672170731'),
-        external: true
+            "category": "featured-hits",
+            "ebayItemId": "298672170731",
+            "badge": "Case Hit SSP 3/6",
+            "statusBadge": "In Stock on eBay",
+            "title": "2026 Parkside IndyCar Nolan Siegel Numerics SSP 3/6",
+            "subtitle": "Arrow McLaren • Ultra-Rare Serial Numbered 3/6 Insert",
+            "price": "$54.99",
+            "specs": [
+                  "Serial-numbered 3 of only 6 made",
+                  "Arrow McLaren IndyCar rising star",
+                  "High-res front & back scans"
+            ],
+            "icon": "🏁",
+            "image": "assets/images/shop/298672170731_front.webp",
+            "backImage": "assets/images/shop/298672170731_back.webp",
+            "imageFit": "contain",
+            "imageAlt": "2026 Parkside IndyCar Nolan Siegel Numerics SSP 3/6 - actual eBay card scan",
+            "imageBg": "from-orange-950/70 to-slate-900",
+            "ctaText": "⚡ Buy on eBay ($54.99) ↗",
+            "ctaUrl": "https://www.ebay.com/itm/298672170731?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339204284&customid=shop_hit_298672170731&toolid=10001&mkevt=1",
+            "external": true
       },
       {
-        category: 'featured-hits',
-        badge: 'Game-Used Relic',
-        statusBadge: 'In Stock on eBay',
-        title: '2026 Choice Banana Ball Coach RAC Jersey Relic',
-        subtitle: 'Savannah Bananas • Robertanthony Cruz Relic Insert',
-        price: '$48.99',
-        specs: ['Authentic Savannah Bananas relic swatch', 'Fan-favorite Coach RAC chase hit', 'Armored tracked shipping'],
-        icon: '👕',
-        imageBg: 'from-emerald-950/70 to-slate-900',
-        ctaText: '⚡ Buy on eBay ($48.99) ↗',
-        ctaUrl: epnItm('227507968583'),
-        external: true
+            "category": "featured-hits",
+            "ebayItemId": "227507968583",
+            "badge": "Game-Used Relic",
+            "statusBadge": "In Stock on eBay",
+            "title": "2026 Choice Banana Ball Coach RAC Jersey Relic",
+            "subtitle": "Savannah Bananas • Robertanthony Cruz Relic Insert",
+            "price": "$48.99",
+            "specs": [
+                  "Authentic Savannah Bananas relic swatch",
+                  "Fan-favorite Coach RAC chase hit",
+                  "Armored tracked shipping"
+            ],
+            "icon": "👕",
+            "image": "assets/images/shop/227507968583_front.webp",
+            "backImage": "assets/images/shop/227507968583_back.webp",
+            "imageFit": "contain",
+            "imageAlt": "2026 Choice Banana Ball Coach RAC Jersey Relic - actual eBay card scan",
+            "imageBg": "from-emerald-950/70 to-slate-900",
+            "ctaText": "⚡ Buy on eBay ($48.99) ↗",
+            "ctaUrl": "https://www.ebay.com/itm/227507968583?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339204284&customid=shop_hit_227507968583&toolid=10001&mkevt=1",
+            "external": true
       },
       {
-        category: 'featured-hits',
-        badge: 'On-Card Auto /100',
-        statusBadge: 'In Stock on eBay',
-        title: '2026 Choice Banana Ball Marshall Shill AUTO /100',
-        subtitle: 'Firefighters • Serial Numbered /100 Certified Auto',
-        price: '$29.99',
-        specs: ['Certified on-card signature /100', 'Firefighters pitching standout', 'Fast Top-Rated Seller dispatch'],
-        icon: '🔥',
-        imageBg: 'from-red-950/70 to-slate-900',
-        ctaText: '⚡ Buy on eBay ($29.99) ↗',
-        ctaUrl: epnItm('227507968570'),
-        external: true
+            "category": "featured-hits",
+            "ebayItemId": "227507968570",
+            "badge": "On-Card Auto /100",
+            "statusBadge": "In Stock on eBay",
+            "title": "2026 Choice Banana Ball Marshall Shill AUTO /100",
+            "subtitle": "Firefighters • Serial Numbered /100 Certified Auto",
+            "price": "$29.99",
+            "specs": [
+                  "Certified on-card signature /100",
+                  "Firefighters pitching standout",
+                  "Fast Top-Rated Seller dispatch"
+            ],
+            "icon": "🔥",
+            "image": "assets/images/shop/227507968570_front.webp",
+            "backImage": "assets/images/shop/227507968570_back.webp",
+            "imageFit": "contain",
+            "imageAlt": "2026 Choice Banana Ball Marshall Shill AUTO /100 - actual eBay card scan",
+            "imageBg": "from-red-950/70 to-slate-900",
+            "ctaText": "⚡ Buy on eBay ($29.99) ↗",
+            "ctaUrl": "https://www.ebay.com/itm/227507968570?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339204284&customid=shop_hit_227507968570&toolid=10001&mkevt=1",
+            "external": true
       },
       {
-        category: 'featured-hits',
-        badge: 'Phantoms SSP /50',
-        statusBadge: 'In Stock on eBay',
-        title: '2026 Parkside IndyCar Graham Rahal Phantoms /50 #PH7',
-        subtitle: 'Rahal Letterman Lanigan • Case Hit SSP /50',
-        price: '$19.99',
-        specs: ['Serial-numbered to /50', 'Case-hit Phantoms insert #PH7', '$1 Tracked Standard Envelope'],
-        icon: '👻',
-        imageBg: 'from-indigo-950/70 to-slate-900',
-        ctaText: '⚡ Buy on eBay ($19.99) ↗',
-        ctaUrl: epnItm('298648724771'),
-        external: true
+            "category": "featured-hits",
+            "ebayItemId": "298648724771",
+            "badge": "Phantoms SSP /50",
+            "statusBadge": "In Stock on eBay",
+            "title": "2026 Parkside IndyCar Graham Rahal Phantoms /50 #PH7",
+            "subtitle": "Rahal Letterman Lanigan • Case Hit SSP /50",
+            "price": "$19.99",
+            "specs": [
+                  "Serial-numbered to /50",
+                  "Case-hit Phantoms insert #PH7",
+                  "$1 Tracked Standard Envelope"
+            ],
+            "icon": "👻",
+            "image": "assets/images/shop/298648724771_front.webp",
+            "backImage": "assets/images/shop/298648724771_back.webp",
+            "imageFit": "contain",
+            "imageAlt": "2026 Parkside IndyCar Graham Rahal Phantoms /50 #PH7 - actual eBay card scan",
+            "imageBg": "from-indigo-950/70 to-slate-900",
+            "ctaText": "⚡ Buy on eBay ($19.99) ↗",
+            "ctaUrl": "https://www.ebay.com/itm/298648724771?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339204284&customid=shop_hit_298648724771&toolid=10001&mkevt=1",
+            "external": true
       },
       {
-        category: 'featured-hits',
-        badge: 'Foil Parallel 1/14',
-        statusBadge: 'In Stock on eBay',
-        title: '2026 Choice Banana Ball Eli Paton RC Foil 1/14 #16',
-        subtitle: 'Indianapolis Clowns • 1-of-14 Rookie Foil Parallel',
-        price: '$19.99',
-        specs: ['Print run of only 14 copies', 'Bookend 1/14 serial stamp', '$1 Tracked Standard Envelope'],
-        icon: '✨',
-        imageBg: 'from-amber-950/70 to-slate-900',
-        ctaText: '⚡ Buy on eBay ($19.99) ↗',
-        ctaUrl: epnItm('298648724768'),
-        external: true
+            "category": "featured-hits",
+            "ebayItemId": "298648724768",
+            "badge": "Foil Parallel 1/14",
+            "statusBadge": "In Stock on eBay",
+            "title": "2026 Choice Banana Ball Eli Paton RC Foil 1/14 #16",
+            "subtitle": "Indianapolis Clowns • 1-of-14 Rookie Foil Parallel",
+            "price": "$19.99",
+            "specs": [
+                  "Print run of only 14 copies",
+                  "Bookend 1/14 serial stamp",
+                  "$1 Tracked Standard Envelope"
+            ],
+            "icon": "✨",
+            "image": "assets/images/shop/298648724768_front.webp",
+            "backImage": "assets/images/shop/298648724768_back.webp",
+            "imageFit": "contain",
+            "imageAlt": "2026 Choice Banana Ball Eli Paton RC Foil 1/14 #16 - actual eBay card scan",
+            "imageBg": "from-amber-950/70 to-slate-900",
+            "ctaText": "⚡ Buy on eBay ($19.99) ↗",
+            "ctaUrl": "https://www.ebay.com/itm/298648724768?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339204284&customid=shop_hit_298648724768&toolid=10001&mkevt=1",
+            "external": true
       },
       {
-        category: 'featured-hits',
-        badge: 'PBA HOF RC Slab',
-        statusBadge: 'In Stock on eBay',
-        title: '1990 Collect-A-Card Kingpins Earl Anthony RC #1 (C3 8)',
-        subtitle: 'PBA Bowling Hall of Fame Legend • Flagship #1 Card',
-        price: '$10.79',
-        specs: ['Key #1 card in the 1990 Kingpins set', '6-time PBA Player of the Year', 'Protected in C3 8 holder'],
-        icon: '🎳',
-        imageBg: 'from-purple-950/70 to-slate-900',
-        ctaText: '⚡ Buy on eBay ($10.79) ↗',
-        ctaUrl: epnItm('227509086198'),
-        external: true
-      },
-
-      // --- 2. EBAY STOREFRONT DEPARTMENTS ---
-      {
-        category: 'ebay-depts',
-        badge: '160+ Cards Live',
-        statusBadge: '$1 Shipping',
-        title: '2026 Parkside IndyCar & Indy NXT Singles',
-        subtitle: 'Base, P1 Polesitters, Helmet Hardware, Foils & Autos',
-        price: 'From $1.99',
-        specs: ['160+ active singles in stock now', 'Complete your master set fast', '$1 flat tracked ESE shipping'],
-        icon: '🏎️',
-        imageBg: 'from-emerald-950/60 to-slate-900',
-        ctaText: 'Shop 160+ IndyCar Singles ↗',
-        ctaUrl: epnStoreSearch('2026 Parkside IndyCar', 'shop_dept_indy'),
-        external: true
+            "category": "featured-hits",
+            "ebayItemId": "227509086198",
+            "badge": "PBA HOF RC Slab",
+            "statusBadge": "In Stock on eBay",
+            "title": "1990 Collect-A-Card Kingpins Earl Anthony RC #1 (C3 8)",
+            "subtitle": "PBA Bowling Hall of Fame Legend • Flagship #1 Card",
+            "price": "$10.79",
+            "specs": [
+                  "Key #1 card in the 1990 Kingpins set",
+                  "6-time PBA Player of the Year",
+                  "Protected in C3 8 holder"
+            ],
+            "icon": "🎳",
+            "image": "assets/images/shop/227509086198_front.webp",
+            "backImage": "assets/images/shop/227509086198_back.webp",
+            "imageFit": "contain",
+            "imageAlt": "1990 Collect-A-Card Kingpins Earl Anthony RC #1 (C3 8) - actual eBay card scan",
+            "imageBg": "from-purple-950/70 to-slate-900",
+            "ctaText": "⚡ Buy on eBay ($10.79) ↗",
+            "ctaUrl": "https://www.ebay.com/itm/227509086198?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339204284&customid=shop_hit_227509086198&toolid=10001&mkevt=1",
+            "external": true
       },
       {
-        category: 'ebay-depts',
-        badge: '125+ Cards Live',
-        statusBadge: '$1 Shipping',
-        title: '2026 Choice Banana Ball & Savannah Bananas',
-        subtitle: 'Bananas, Party Animals, Firefighters, Tailgaters & Clowns',
-        price: 'From $1.50',
-        specs: ['125+ active singles, SPs & autos', 'All 6 BBCL teams represented', '$1 flat tracked ESE shipping'],
-        icon: '🍌',
-        imageBg: 'from-yellow-950/60 to-slate-900',
-        ctaText: 'Shop 125+ Banana Ball Cards ↗',
-        ctaUrl: epnStoreSearch('Banana Ball', 'shop_dept_banana'),
-        external: true
+            "category": "ebay-depts",
+            "badge": "160+ Cards Live",
+            "statusBadge": "$1 Shipping",
+            "title": "2026 Parkside IndyCar & Indy NXT Singles",
+            "subtitle": "Base, P1 Polesitters, Helmet Hardware, Foils & Autos",
+            "price": "From $1.99",
+            "specs": [
+                  "160+ active singles in stock now",
+                  "Complete your master set fast",
+                  "$1 flat tracked ESE shipping"
+            ],
+            "icon": "🏎️",
+            "image": "assets/images/shop/dept_indy_298648724761_front.webp",
+            "backImage": "assets/images/shop/dept_indy_298648724761_back.webp",
+            "imageFit": "contain",
+            "imageAlt": "2026 Parkside IndyCar & Indy NXT Singles - live store card scan",
+            "imageBg": "from-emerald-950/60 to-slate-900",
+            "ctaText": "Shop 160+ IndyCar Singles ↗",
+            "ctaUrl": "https://www.ebay.com/sch/i.html?_ssn=pocketcash&_nkw=2026%20Parkside%20IndyCar&_sop=12&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339204284&customid=shop_dept_indy&toolid=10001&mkevt=1",
+            "external": true
       },
       {
-        category: 'ebay-depts',
-        badge: '520+ Cards Live',
-        statusBadge: '$1 Shipping',
-        title: 'International Baseball (CPBL Taiwan, Czech WBC & KBO)',
-        subtitle: '1994 CPBL, 2023 Czech Baseball & 2025 SCC Korean KBO',
-        price: 'From $1.99',
-        specs: ['275+ 1994 CPBL Taiwan singles', '245+ Czech Baseball & 70+ KBO cards', 'Rare imports shipped from Oklahoma'],
-        icon: '🌍',
-        imageBg: 'from-cyan-950/60 to-slate-900',
-        ctaText: 'Shop International Baseball ↗',
-        ctaUrl: epnStoreSearch('CPBL Czech KBO', 'shop_dept_intl'),
-        external: true
+            "category": "ebay-depts",
+            "badge": "125+ Cards Live",
+            "statusBadge": "$1 Shipping",
+            "title": "2026 Choice Banana Ball & Savannah Bananas",
+            "subtitle": "Bananas, Party Animals, Firefighters, Tailgaters & Clowns",
+            "price": "From $1.50",
+            "specs": [
+                  "125+ active singles, SPs & autos",
+                  "All 6 BBCL teams represented",
+                  "$1 flat tracked ESE shipping"
+            ],
+            "icon": "🍌",
+            "image": "assets/images/shop/dept_banana_298648724760_front.webp",
+            "backImage": "assets/images/shop/dept_banana_298648724760_back.webp",
+            "imageFit": "contain",
+            "imageAlt": "2026 Choice Banana Ball & Savannah Bananas - live store card scan",
+            "imageBg": "from-yellow-950/60 to-slate-900",
+            "ctaText": "Shop 125+ Banana Ball Cards ↗",
+            "ctaUrl": "https://www.ebay.com/sch/i.html?_ssn=pocketcash&_nkw=Banana%20Ball&_sop=12&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339204284&customid=shop_dept_banana&toolid=10001&mkevt=1",
+            "external": true
       },
       {
-        category: 'ebay-depts',
-        badge: '380+ Cards Live',
-        statusBadge: '$1 Shipping',
-        title: 'PRCA Rodeo, PBA Bowling & The Ocho Sports',
-        subtitle: '1995 High Gear Rodeo, 1990 Kingpins, Sumo & UFA Frisbee',
-        price: 'From $1.99',
-        specs: ['220+ 1995 High Gear PRCA Rodeo cards', '95+ 1990 Kingpins & 65+ UFA Frisbee', '100+ BBM Japanese Sumo legends'],
-        icon: '🤠',
-        imageBg: 'from-amber-950/60 to-slate-900',
-        ctaText: 'Shop Rodeo & The Ocho ↗',
-        ctaUrl: epnStoreSearch('Rodeo Kingpins UFA Sumo', 'shop_dept_ocho'),
-        external: true
+            "category": "ebay-depts",
+            "badge": "520+ Cards Live",
+            "statusBadge": "$1 Shipping",
+            "title": "International Baseball (CPBL Taiwan, Czech WBC & KBO)",
+            "subtitle": "1994 CPBL, 2023 Czech Baseball & 2025 SCC Korean KBO",
+            "price": "From $1.99",
+            "specs": [
+                  "275+ 1994 CPBL Taiwan singles",
+                  "245+ Czech Baseball & 70+ KBO cards",
+                  "Rare imports shipped from Oklahoma"
+            ],
+            "icon": "🌍",
+            "image": "assets/images/shop/dept_intl_227402597053_front.webp",
+            "backImage": "assets/images/shop/dept_intl_227402597053_back.webp",
+            "imageFit": "contain",
+            "imageAlt": "International Baseball (CPBL Taiwan, Czech WBC & KBO) - live store card scan",
+            "imageBg": "from-cyan-950/60 to-slate-900",
+            "ctaText": "Shop International Baseball ↗",
+            "ctaUrl": "https://www.ebay.com/sch/i.html?_ssn=pocketcash&_nkw=CPBL%20Czech%20KBO&_sop=12&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339204284&customid=shop_dept_intl&toolid=10001&mkevt=1",
+            "external": true
       },
       {
-        category: 'ebay-depts',
-        badge: '100+ Cards Live',
-        statusBadge: '$1 Shipping',
-        title: 'Minor League Baseball & FPHL Hockey Team Sets',
-        subtitle: 'Lansing Lugnuts, Midwest League Prospects & Danbury Hat Tricks',
-        price: 'From $1.99',
-        specs: ['2018-2023 Lansing Lugnuts singles', '2025-26 Danbury Hat Tricks FPHL (50+)', '1999 Multi-Ad Midwest Prospects'],
-        icon: '⚾',
-        imageBg: 'from-blue-950/60 to-slate-900',
-        ctaText: 'Shop MiLB & FPHL Singles ↗',
-        ctaUrl: epnStoreSearch('Lansing Lugnuts Danbury Midwest', 'shop_dept_milb'),
-        external: true
+            "category": "ebay-depts",
+            "badge": "380+ Cards Live",
+            "statusBadge": "$1 Shipping",
+            "title": "PRCA Rodeo, PBA Bowling & The Ocho Sports",
+            "subtitle": "1995 High Gear Rodeo, 1990 Kingpins, Sumo & UFA Frisbee",
+            "price": "From $1.99",
+            "specs": [
+                  "220+ 1995 High Gear PRCA Rodeo cards",
+                  "95+ 1990 Kingpins & 65+ UFA Frisbee",
+                  "100+ BBM Japanese Sumo legends"
+            ],
+            "icon": "🤠",
+            "image": "assets/images/shop/dept_ocho_227403811844_front.webp",
+            "backImage": null,
+            "imageFit": "contain",
+            "imageAlt": "PRCA Rodeo, PBA Bowling & The Ocho Sports - live store card scan",
+            "imageBg": "from-amber-950/60 to-slate-900",
+            "ctaText": "Shop Rodeo & The Ocho ↗",
+            "ctaUrl": "https://www.ebay.com/sch/i.html?_ssn=pocketcash&_nkw=Rodeo%20Kingpins%20UFA%20Sumo&_sop=12&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339204284&customid=shop_dept_ocho&toolid=10001&mkevt=1",
+            "external": true
       },
       {
-        category: 'ebay-depts',
-        badge: '45+ Cards Live',
-        statusBadge: '$1 Shipping',
-        title: "Women's Pro Sports (PWHL Hockey & AU Softball)",
-        subtitle: '2025-26 Fleer Ultra PWHL & 2023 Topps Athletes Unlimited',
-        price: 'From $1.99',
-        specs: ['27+ Topps AU Softball (OU & OSU stars)', '20+ Fleer Ultra PWHL Hockey singles', '$1 flat tracked ESE shipping'],
-        icon: '🥎',
-        imageBg: 'from-teal-950/60 to-slate-900',
-        ctaText: 'Shop PWHL & AU Softball ↗',
-        ctaUrl: epnStoreSearch('Athletes Unlimited PWHL', 'shop_dept_womens'),
-        external: true
+            "category": "ebay-depts",
+            "badge": "100+ Cards Live",
+            "statusBadge": "$1 Shipping",
+            "title": "Minor League Baseball & FPHL Hockey Team Sets",
+            "subtitle": "Lansing Lugnuts, Midwest League Prospects & Danbury Hat Tricks",
+            "price": "From $1.99",
+            "specs": [
+                  "2018-2023 Lansing Lugnuts singles",
+                  "2025-26 Danbury Hat Tricks FPHL (50+)",
+                  "1999 Multi-Ad Midwest Prospects"
+            ],
+            "icon": "⚾",
+            "image": "assets/images/shop/dept_milb_227567881291_front.webp",
+            "backImage": "assets/images/shop/dept_milb_227567881291_back.webp",
+            "imageFit": "contain",
+            "imageAlt": "Minor League Baseball & FPHL Hockey Team Sets - live store card scan",
+            "imageBg": "from-blue-950/60 to-slate-900",
+            "ctaText": "Shop MiLB & FPHL Singles ↗",
+            "ctaUrl": "https://www.ebay.com/sch/i.html?_ssn=pocketcash&_nkw=Lansing%20Lugnuts%20Danbury%20Midwest&_sop=12&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339204284&customid=shop_dept_milb&toolid=10001&mkevt=1",
+            "external": true
       },
       {
-        category: 'ebay-depts',
-        badge: '50+ Cards Live',
-        statusBadge: '$1 Shipping',
-        title: '2016 Decision Political & Pop Culture Non-Sports',
-        subtitle: 'Candidates, Influencers, Political Gems & Historical Cards',
-        price: 'From $1.99',
-        specs: ['50+ 2016 Decision Political singles', 'Candidates, Finalists & Influencers', 'Fast combined shipping discounts'],
-        icon: '🏛️',
-        imageBg: 'from-rose-950/60 to-slate-900',
-        ctaText: 'Shop Decision Political ↗',
-        ctaUrl: epnStoreSearch('2016 Decision', 'shop_dept_political'),
-        external: true
+            "category": "ebay-depts",
+            "badge": "45+ Cards Live",
+            "statusBadge": "$1 Shipping",
+            "title": "Women's Pro Sports (PWHL Hockey & AU Softball)",
+            "subtitle": "2025-26 Fleer Ultra PWHL & 2023 Topps Athletes Unlimited",
+            "price": "From $1.99",
+            "specs": [
+                  "27+ Topps AU Softball (OU & OSU stars)",
+                  "20+ Fleer Ultra PWHL Hockey singles",
+                  "$1 flat tracked ESE shipping"
+            ],
+            "icon": "🥎",
+            "image": "assets/images/shop/dept_womens_227580889055_front.webp",
+            "backImage": "assets/images/shop/dept_womens_227580889055_back.webp",
+            "imageFit": "contain",
+            "imageAlt": "Women's Pro Sports (PWHL Hockey & AU Softball) - live store card scan",
+            "imageBg": "from-teal-950/60 to-slate-900",
+            "ctaText": "Shop PWHL & AU Softball ↗",
+            "ctaUrl": "https://www.ebay.com/sch/i.html?_ssn=pocketcash&_nkw=Athletes%20Unlimited%20PWHL&_sop=12&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339204284&customid=shop_dept_womens&toolid=10001&mkevt=1",
+            "external": true
       },
       {
-        category: 'ebay-depts',
-        badge: '10,500+ Total',
-        statusBadge: 'Full Catalog',
-        title: 'Full Pocket Cash eBay Storefront (All Sports)',
-        subtitle: 'MLB, NFL, NBA, NCAA, Vintage & Niche Singles',
-        price: 'From $1.49',
-        specs: ['Over 10,500 live fixed-price singles', 'New cards uploaded daily', 'Top-Rated Seller service'],
-        icon: '🏪',
-        imageBg: 'from-slate-800 to-slate-950',
-        ctaText: 'Browse All 10,500+ Cards ↗',
-        ctaUrl: 'https://www.ebay.com/str/pocketcash?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339204284&customid=shop_dept_all&toolid=10001&mkevt=1',
-        external: true
-      },
-
-      // --- 3. ARDMORE BOOTH #64 IN-STORE SHOWCASE ---
-      {
-        category: 'ardmore-booth',
-        badge: 'Booth #64 Exclusive',
-        statusBadge: 'In-Store at Ardmore',
-        title: '$5 Pocket Cash Mystery Vault Packs',
-        subtitle: 'Curated Repacks with Stars, Rookies, Parallels & Vintage',
-        price: '$5.00',
-        specs: ['Loaded with MLB, NFL & NBA stars', 'Zero junk-era filler bloat', 'Available at 219 W. Main St. #64'],
-        icon: '🎁',
-        imageBg: 'from-emerald-950/70 to-slate-900',
-        ctaText: '📍 Visit Booth #64 in Ardmore →',
-        ctaUrl: 'ardmore.html',
-        external: false
+            "category": "ebay-depts",
+            "badge": "50+ Cards Live",
+            "statusBadge": "$1 Shipping",
+            "title": "2016 Decision Political & Pop Culture Non-Sports",
+            "subtitle": "Candidates, Influencers, Political Gems & Historical Cards",
+            "price": "From $1.99",
+            "specs": [
+                  "50+ 2016 Decision Political singles",
+                  "Candidates, Finalists & Influencers",
+                  "Fast combined shipping discounts"
+            ],
+            "icon": "🏛️",
+            "image": "assets/images/shop/dept_political_227515802007_front.webp",
+            "backImage": "assets/images/shop/dept_political_227515802007_back.webp",
+            "imageFit": "contain",
+            "imageAlt": "2016 Decision Political & Pop Culture Non-Sports - live store card scan",
+            "imageBg": "from-rose-950/60 to-slate-900",
+            "ctaText": "Shop Decision Political ↗",
+            "ctaUrl": "https://www.ebay.com/sch/i.html?_ssn=pocketcash&_nkw=2016%20Decision&_sop=12&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339204284&customid=shop_dept_political&toolid=10001&mkevt=1",
+            "external": true
       },
       {
-        category: 'ardmore-booth',
-        badge: 'Booth #64 Showcase',
-        statusBadge: 'In-Store at Ardmore',
-        title: 'MLB, NFL, NBA & Oklahoma Sooners Star Singles',
-        subtitle: 'Hand-Priced $1–$50 Raw Singles in Sleeves & One-Touches',
-        price: '$1.00 - $50+',
-        specs: ['Fresh inventory rotated every month', 'Inspect condition in person before buying', 'Zero shipping fees'],
-        icon: '⭐',
-        imageBg: 'from-red-950/70 to-slate-900',
-        ctaText: '📍 See Booth #64 Showcase →',
-        ctaUrl: 'ardmore.html',
-        external: false
+            "category": "ebay-depts",
+            "badge": "10,500+ Total",
+            "statusBadge": "Full Catalog",
+            "title": "Full Pocket Cash eBay Storefront (All Sports)",
+            "subtitle": "MLB, NFL, NBA, NCAA, Vintage & Niche Singles",
+            "price": "From $1.49",
+            "specs": [
+                  "Over 10,500 live fixed-price singles",
+                  "New cards uploaded daily",
+                  "Top-Rated Seller service"
+            ],
+            "icon": "🏪",
+            "image": "assets/images/shop/dept_all_298183619229_front.webp",
+            "backImage": "assets/images/shop/dept_all_298183619229_back.webp",
+            "imageFit": "contain",
+            "imageAlt": "Full Pocket Cash eBay Storefront (All Sports) - live store card scan",
+            "imageBg": "from-slate-800 to-slate-950",
+            "ctaText": "Browse All 10,500+ Cards ↗",
+            "ctaUrl": "https://www.ebay.com/str/pocketcash?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339204284&customid=shop_dept_all&toolid=10001&mkevt=1",
+            "external": true
       },
       {
-        category: 'ardmore-booth',
-        badge: 'Custom 3D Print',
-        statusBadge: 'In-Store at Ardmore',
-        title: '3D-Printed Slab Stands, Stadium Risers & Caddies',
-        subtitle: 'Heavy-Duty PLA+ Display Stands for PSA, SGC & One-Touches',
-        price: '$7.99 - $19.99',
-        specs: ['Single hex stands & 3-tier risers', '4-slot desk sorting caddies', 'Pick up locally at Booth #64'],
-        icon: '🖨️',
-        imageBg: 'from-blue-950/70 to-slate-900',
-        ctaText: '📍 Pick Up at Booth #64 →',
-        ctaUrl: 'ardmore.html',
-        external: false
+            "category": "ardmore-booth",
+            "badge": "Booth #64 Exclusive",
+            "statusBadge": "In-Store at Ardmore",
+            "title": "$5 Pocket Cash Mystery Vault Packs",
+            "subtitle": "Curated Repacks with Stars, Rookies, Parallels & Vintage",
+            "price": "$5.00",
+            "specs": [
+                  "Loaded with MLB, NFL & NBA stars",
+                  "Zero junk-era filler bloat",
+                  "Available at 219 W. Main St. #64"
+            ],
+            "icon": "🎁",
+            "image": "assets/images/ardmore/baseball-cards-wax-packs-booth-64-ardmore-ok.webp",
+            "imageFit": "cover",
+            "imageAlt": "$5 Pocket Cash Mystery Vault Packs & wax at Ardmore Booth #64",
+            "imageBg": "from-emerald-950/70 to-slate-900",
+            "ctaText": "📍 Visit Booth #64 in Ardmore →",
+            "ctaUrl": "ardmore.html",
+            "external": false
       },
       {
-        category: 'ardmore-booth',
-        badge: 'Local Supply Hub',
-        statusBadge: 'In-Store at Ardmore',
-        title: 'In-Store Penny Sleeves, Toploaders & Storage Boxes',
-        subtitle: 'Grab Essential Card Protection Right Off Main Street',
-        price: 'Retail Packs',
-        specs: ['35pt toploaders & archival penny sleeves', 'Magnetic One-Touch holders', 'Open Mon-Sat at Texoma Trading Post'],
-        icon: '🛡️',
-        imageBg: 'from-teal-950/70 to-slate-900',
-        ctaText: '📍 Directions & Hours →',
-        ctaUrl: 'ardmore.html',
-        external: false
-      },
-
-      // --- 4. COLLECTOR SUPPLIES (AFFILIATE QUICK-SHOP) ---
-      {
-        category: 'supplies',
-        badge: 'Daily Essential',
-        statusBadge: 'Amazon Prime',
-        title: 'Ultra PRO 35pt Toploaders & Penny Sleeves Bundle',
-        subtitle: 'Crystal-Clear Acid-Free Protection for Standard Cards',
-        price: 'Check Live Price',
-        specs: ['Fits standard 2.5" x 3.5" 35pt cards', 'Zero PVC archival polypropylene', 'Fast Prime delivery'],
-        icon: '🛡️',
-        imageBg: 'from-slate-800 to-slate-950',
-        ctaText: '🛒 Buy on Amazon Prime ↗',
-        ctaUrl: 'https://www.amazon.com/dp/B000CO82NA?tag=pocketcash01-20',
-        external: true
+            "category": "ardmore-booth",
+            "badge": "Booth #64 Showcase",
+            "statusBadge": "In-Store at Ardmore",
+            "title": "MLB, NFL, NBA & Oklahoma Sooners Star Singles",
+            "subtitle": "Hand-Priced $1–$50 Raw Singles in Sleeves & One-Touches",
+            "price": "$1.00 - $50+",
+            "specs": [
+                  "Fresh inventory rotated every month",
+                  "Inspect condition in person before buying",
+                  "Zero shipping fees"
+            ],
+            "icon": "⭐",
+            "image": "assets/images/ardmore/modern-rookie-cards-stars-ardmore-ok-showcase.webp",
+            "imageFit": "cover",
+            "imageAlt": "Modern rookie cards and star singles showcase at Ardmore Booth #64",
+            "imageBg": "from-red-950/70 to-slate-900",
+            "ctaText": "📍 See Booth #64 Showcase →",
+            "ctaUrl": "ardmore.html",
+            "external": false
       },
       {
-        category: 'supplies',
-        badge: 'Grading Standard',
-        statusBadge: 'Amazon Prime',
-        title: 'Cardboard Gold Card Saver 1 Semi-Rigid Holders',
-        subtitle: 'Official Holder for PSA, SGC, BGS & eBay Standard Envelope',
-        price: 'Check Live Price',
-        specs: ['Required for PSA/SGC submissions', 'Ideal for $1 eBay Standard Envelope', 'Crystal clear 9-mil archival plastic'],
-        icon: '📦',
-        imageBg: 'from-amber-950/60 to-slate-900',
-        ctaText: '🛒 Buy on Amazon Prime ↗',
-        ctaUrl: 'https://www.amazon.com/s?k=Cardboard+Gold+Card+Saver+1&tag=pocketcash01-20',
-        external: true
+            "category": "ardmore-booth",
+            "badge": "Custom 3D Print",
+            "statusBadge": "In-Store at Ardmore",
+            "title": "3D-Printed Slab Stands, Stadium Risers & Caddies",
+            "subtitle": "Heavy-Duty PLA+ Display Stands for PSA, SGC & One-Touches",
+            "price": "$7.99 - $19.99",
+            "specs": [
+                  "Single hex stands & 3-tier risers",
+                  "4-slot desk sorting caddies",
+                  "Pick up locally at Booth #64"
+            ],
+            "icon": "🖨️",
+            "image": "assets/images/ardmore/3d-printed-card-stands-booth-merchandising-ardmore-ok.webp",
+            "imageFit": "cover",
+            "imageAlt": "Custom 3D-printed card stands and risers at Booth #64",
+            "imageBg": "from-blue-950/70 to-slate-900",
+            "ctaText": "📍 Pick Up at Booth #64 →",
+            "ctaUrl": "ardmore.html",
+            "external": false
       },
       {
-        category: 'supplies',
-        badge: 'PC Showcase Favorite',
-        statusBadge: 'Amazon Prime',
-        title: 'Pro-Mold 35pt Magnetic One-Touch (Holds Sleeved Card)',
-        subtitle: 'UV-Protected Magnetic Case Designed to Fit Penny Sleeves',
-        price: 'Check Live Price',
-        specs: ['Holds card WITH a penny sleeve on', 'Prevents chrome/refractor surface scratches', '5-year UV protection'],
-        icon: '💎',
-        imageBg: 'from-emerald-950/60 to-slate-900',
-        ctaText: '🛒 Buy on Amazon Prime ↗',
-        ctaUrl: 'https://www.amazon.com/s?k=Pro-Mold+MH35S+35pt+magnetic+holder+with+penny+sleeve&tag=pocketcash01-20',
-        external: true
+            "category": "ardmore-booth",
+            "badge": "Local Supply Hub",
+            "statusBadge": "In-Store at Ardmore",
+            "title": "In-Store Penny Sleeves, Toploaders & Storage Boxes",
+            "subtitle": "Grab Essential Card Protection Right Off Main Street",
+            "price": "Retail Packs",
+            "specs": [
+                  "35pt toploaders & archival penny sleeves",
+                  "Magnetic One-Touch holders",
+                  "Open Mon-Sat at Texoma Trading Post"
+            ],
+            "icon": "🛡️",
+            "image": "assets/images/ardmore/hobby-supplies-toploaders-penny-sleeves-ardmore-ok.webp",
+            "imageFit": "cover",
+            "imageAlt": "Toploaders, penny sleeves, and hobby supplies at Ardmore Booth #64",
+            "imageBg": "from-teal-950/70 to-slate-900",
+            "ctaText": "📍 Directions & Hours →",
+            "ctaUrl": "ardmore.html",
+            "external": false
       },
       {
-        category: 'supplies',
-        badge: '40+ Items Compared',
-        statusBadge: 'Full Guide',
-        title: 'Complete Archival Card Supplies & Grading Prep Guide',
-        subtitle: 'Compare 40+ Card Holders, Loupes, Centering Tools & Storage Boxes',
-        price: 'Free Guide',
-        specs: ['Side-by-side Amazon & eBay price links', 'Thick relic & booklet point-gauge chart', 'PSA & SGC submission prep checklist'],
-        icon: '📑',
-        imageBg: 'from-purple-950/60 to-slate-900',
-        ctaText: 'Open Full Supplies Guide →',
-        ctaUrl: 'supplies.html',
-        external: false
+            "category": "supplies",
+            "badge": "Daily Essential",
+            "statusBadge": "Amazon Prime",
+            "title": "Ultra PRO 35pt Toploaders & Penny Sleeves Bundle",
+            "subtitle": "Crystal-Clear Acid-Free Protection for Standard Cards",
+            "price": "Check Live Price",
+            "specs": [
+                  "Fits standard 2.5\" x 3.5\" 35pt cards",
+                  "Zero PVC archival polypropylene",
+                  "Fast Prime delivery"
+            ],
+            "icon": "🛡️",
+            "image": "assets/images/supplies/ultra-pro-35pt-toploaders.webp",
+            "imageFit": "contain",
+            "imageAlt": "Ultra PRO 35pt Toploaders & Penny Sleeves",
+            "imageBg": "from-slate-800 to-slate-950",
+            "ctaText": "🛒 Buy on Amazon Prime ↗",
+            "ctaUrl": "https://www.amazon.com/dp/B000CO82NA?tag=pocketcash01-20",
+            "external": true
+      },
+      {
+            "category": "supplies",
+            "badge": "Grading Standard",
+            "statusBadge": "Amazon Prime",
+            "title": "Cardboard Gold Card Saver 1 Semi-Rigid Holders",
+            "subtitle": "Official Holder for PSA, SGC, BGS & eBay Standard Envelope",
+            "price": "Check Live Price",
+            "specs": [
+                  "Required for PSA/SGC submissions",
+                  "Ideal for $1 eBay Standard Envelope",
+                  "Crystal clear 9-mil archival plastic"
+            ],
+            "icon": "📦",
+            "image": "assets/images/supplies/card-saver-1-semi-rigid-holders.webp",
+            "imageFit": "contain",
+            "imageAlt": "Cardboard Gold Card Saver 1 Semi-Rigid Holders",
+            "imageBg": "from-amber-950/60 to-slate-900",
+            "ctaText": "🛒 Buy on Amazon Prime ↗",
+            "ctaUrl": "https://www.amazon.com/s?k=Cardboard+Gold+Card+Saver+1&tag=pocketcash01-20",
+            "external": true
+      },
+      {
+            "category": "supplies",
+            "badge": "PC Showcase Favorite",
+            "statusBadge": "Amazon Prime",
+            "title": "Pro-Mold 35pt Magnetic One-Touch (Holds Sleeved Card)",
+            "subtitle": "UV-Protected Magnetic Case Designed to Fit Penny Sleeves",
+            "price": "Check Live Price",
+            "specs": [
+                  "Holds card WITH a penny sleeve on",
+                  "Prevents chrome/refractor surface scratches",
+                  "5-year UV protection"
+            ],
+            "icon": "💎",
+            "image": "assets/images/supplies/pro-mold-35pt-magnetic-one-touch.webp",
+            "imageFit": "contain",
+            "imageAlt": "Pro-Mold 35pt Magnetic One-Touch Case",
+            "imageBg": "from-emerald-950/60 to-slate-900",
+            "ctaText": "🛒 Buy on Amazon Prime ↗",
+            "ctaUrl": "https://www.amazon.com/s?k=Pro-Mold+MH35S+35pt+magnetic+holder+with+penny+sleeve&tag=pocketcash01-20",
+            "external": true
+      },
+      {
+            "category": "supplies",
+            "badge": "40+ Items Compared",
+            "statusBadge": "Full Guide",
+            "title": "Complete Archival Card Supplies & Grading Prep Guide",
+            "subtitle": "Compare 40+ Card Holders, Loupes, Centering Tools & Storage Boxes",
+            "price": "Free Guide",
+            "specs": [
+                  "Side-by-side Amazon & eBay price links",
+                  "Thick relic & booklet point-gauge chart",
+                  "PSA & SGC submission prep checklist"
+            ],
+            "icon": "📑",
+            "image": "assets/images/supplies/bcw-3200-monster-storage-box.webp",
+            "imageFit": "contain",
+            "imageAlt": "Archival Card Storage & Supplies Guide",
+            "imageBg": "from-purple-950/60 to-slate-900",
+            "ctaText": "Open Full Supplies Guide →",
+            "ctaUrl": "supplies.html",
+            "external": false
       }
-    ];
+];
+    // SHOP_PRODUCTS_END
 
     function renderProducts(filter = 'all') {
       const grid = document.getElementById('products-grid');
@@ -716,15 +903,47 @@
             ? 'bg-brand-secondary hover:bg-brand-secondaryHover text-white font-black'
             : 'bg-brand-primary hover:bg-brand-primaryHover text-slate-950 font-black');
 
+        const fitClass = p.imageFit === 'cover' ? 'w-full h-full object-cover' : 'max-h-full max-w-full w-auto h-auto object-contain rounded-lg shadow-lg';
+        const padClass = p.imageFit === 'cover' ? '' : 'p-3 pt-10 pb-3';
+        const hasBack = Boolean(p.backImage);
+        const mediaHtml = p.image
+          ? `
+            <div class="relative w-full h-full flex items-center justify-center">
+              <img
+                src="${p.image}"
+                alt="${p.imageAlt || p.title}"
+                loading="lazy"
+                onerror="this.style.display='none'; if(this.parentElement.querySelector('[data-fallback]')) this.parentElement.querySelector('[data-fallback]').style.display='flex';"
+                class="${fitClass} ${hasBack ? 'transition-opacity duration-300 group-hover:opacity-0' : 'transition-transform duration-300 group-hover:scale-105'}"
+              >
+              ${hasBack ? `
+                <img
+                  src="${p.backImage}"
+                  alt="${p.imageAlt || p.title} (back scan)"
+                  loading="lazy"
+                  class="${fitClass} absolute inset-0 m-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                >
+              ` : ''}
+              <span data-fallback="1" style="display:none" class="text-5xl select-none items-center justify-center">${p.icon}</span>
+            </div>
+            ${hasBack ? `
+              <span class="absolute bottom-2 right-2 z-10 bg-slate-950/85 border border-slate-700/80 text-slate-300 text-[10px] font-bold px-2 py-0.5 rounded-md backdrop-blur-sm">
+                <span class="group-hover:hidden">🔄 Hover: Back Scan</span>
+                <span class="hidden group-hover:inline text-brand-primary">📷 Back Scan</span>
+              </span>
+            ` : ''}
+          `
+          : `<span class="text-5xl select-none group-hover:scale-110 transition-transform duration-300">${p.icon}</span>`;
+
         card.innerHTML = `
-          <div class="h-40 bg-gradient-to-br ${p.imageBg} border-b border-brand-border flex flex-col items-center justify-center relative p-4 text-center overflow-hidden">
-            <span class="absolute top-3 left-3 bg-slate-950/85 border border-brand-border text-brand-cream font-black text-[11px] px-2.5 py-1 rounded-md shadow-md">
+          <div class="h-60 bg-gradient-to-br ${p.imageBg} border-b border-brand-border flex flex-col items-center justify-center relative ${padClass} text-center overflow-hidden">
+            <span class="absolute top-2.5 left-2.5 z-10 bg-slate-950/90 border border-brand-border text-brand-cream font-black text-[11px] px-2.5 py-1 rounded-md shadow-md backdrop-blur-sm">
               ${p.badge}
             </span>
-            <span class="absolute top-3 right-3 bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-bold text-[10px] px-2 py-0.5 rounded-md">
+            <span class="absolute top-2.5 right-2.5 z-10 bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-bold text-[10px] px-2 py-0.5 rounded-md backdrop-blur-sm">
               ${p.statusBadge}
             </span>
-            <span class="text-5xl select-none group-hover:scale-110 transition-transform duration-300">${p.icon}</span>
+            ${mediaHtml}
           </div>
 
           <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
