@@ -238,9 +238,16 @@ def derive_card_metadata(title: str, price: float, condition: str, has_back: boo
     subtitle_parts.append("Pocket Cash eBay Vault")
     subtitle = " • ".join(subtitle_parts)
 
+    if price >= 100:
+        ship_spec = "Ships in padded mailer inside a box (USPS Ground Advantage)"
+    elif price >= 20:
+        ship_spec = "Ships in double-padded mailer (USPS Ground Advantage)"
+    else:
+        ship_spec = "Ships via $1 Tracked Standard Envelope"
+
     specs = [
         "Actual card scanned front & back" if has_back else "Actual card photo from listing",
-        "Ships via Armored USPS Ground Advantage" if price >= 20 else "Ships via $1 Tracked Standard Envelope",
+        ship_spec,
         "100% authentic • Top-Rated eBay Seller",
     ]
     return {"badge": badge, "subtitle": subtitle, "icon": icon, "specs": specs}
