@@ -94,16 +94,20 @@ def fetch_top_priced_active_items(client, limit: int = 20) -> List[Dict[str, Any
         iid = (node.findtext("e:ItemID", "", ns) or "").strip()
         title = (node.findtext("e:Title", "", ns) or "").strip()
         price_txt = node.findtext("e:SellingStatus/e:CurrentPrice", "", ns)
-        if not iid or not price_txt:
+        qty = int(node.findtext("e:Quantity", "0", ns) or 0)
+        sold = int(node.findtext("e:SellingStatus/e:QuantitySold", "0", ns) or 0)
+        qty_avail_txt = node.findtext("e:QuantityAvailable", "", ns)
+        qty_avail = int(qty_avail_txt) if qty_avail_txt != "" else max(0, qty - sold)
+        if not iid or not price_txt or qty_avail <= 0:
             continue
-        items.append({"item_id": iid, "title": title, "price": float(price_txt)})
+        items.append({"item_id": iid, "title": title, "price": float(price_txt), "qty_available": qty_avail})
 
     items.sort(key=lambda x: x["price"], reverse=True)
     return items
 
 
 def fetch_ebay_item_details(client, item_id: str) -> Dict[str, Any]:
-    """Fetch live listing title, price, status, condition, and PictureURLs via Trading GetItem."""
+    """Fetch live listing title, price, status, stock availability, and PictureURLs via Trading GetItem."""
     xml_req = (
         '<?xml version="1.0" encoding="utf-8"?>'
         '<GetItemRequest xmlns="urn:ebay:apis:eBLBaseComponents">'
@@ -127,6 +131,10 @@ def fetch_ebay_item_details(client, item_id: str) -> Dict[str, Any]:
 
     title = (root.findtext(".//e:Item/e:Title", "", ns) or "").strip()
     status = (root.findtext(".//e:Item/e:SellingStatus/e:ListingStatus", "", ns) or "").strip()
+    qty = int(root.findtext(".//e:Item/e:Quantity", "0", ns) or 0)
+    sold = int(root.findtext(".//e:Item/e:SellingStatus/e:QuantitySold", "0", ns) or 0)
+    qty_available = max(0, qty - sold)
+    hide_from_search = (root.findtext(".//e:Item/e:HideFromSearch", "", ns) or "").strip().lower() == "true"
     price_text = root.findtext(".//e:Item/e:SellingStatus/e:CurrentPrice", "", ns)
     price = float(price_text) if price_text else 0.0
     condition = (root.findtext(".//e:Item/e:ConditionDisplayName", "", ns) or "").strip()
@@ -139,6 +147,8 @@ def fetch_ebay_item_details(client, item_id: str) -> Dict[str, Any]:
         "item_id": item_id,
         "title": title,
         "status": status,
+        "qty_available": qty_available,
+        "hide_from_search": hide_from_search,
         "price": price,
         "condition": condition,
         "pictures": pics,
@@ -249,8 +259,8 @@ def sync_shop_showcase(force_images: bool = False, deploy: bool = True) -> bool:
         raise FileNotFoundError(f"shop.html not found: {SHOP_HTML_PATH}")
 
     client = get_ebay_client()
-    candidates = fetch_top_priced_active_items(client, limit=25)
-    print(f"[*] Fetched {len(candidates)} top-priced active candidates from eBay.")
+    candidates = fetch_top_priced_active_items(client, limit=40)
+    print(f"[*] Fetched {len(candidates)} in-stock top-priced active candidates from eBay.")
 
     referenced_files = set()
     products: List[Dict[str, Any]] = []
@@ -260,7 +270,13 @@ def sync_shop_showcase(force_images: bool = False, deploy: bool = True) -> bool:
             break
         item_id = cand["item_id"]
         details = fetch_ebay_item_details(client, item_id)
-        if details["status"] != "Active" or not details["pictures"]:
+        if (
+            details["status"] != "Active"
+            or details["qty_available"] <= 0
+            or details["hide_from_search"]
+            or not details["pictures"]
+        ):
+            print(f"  [!] Skipping unavailable/sold item {item_id} (status={details['status']}, avail={details['qty_available']}, hidden={details['hide_from_search']})")
             continue
 
         rank = len(products) + 1
