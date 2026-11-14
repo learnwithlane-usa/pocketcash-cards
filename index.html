@@ -3,24 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pocket Cash Cards | Sports Cards, Vintage Gems & Collectibles | Ardmore, OK</title>
-  <meta name="description" content="Southern Oklahoma's premier spot for sports cards, raw vintage gems, modern rookies, and rare imports. Visit our Ardmore shop or browse our daily eBay drops.">
+  <title>Pocket Cash Cards | Sports Card Consignment (Keep 75%–85%), Live Vault &amp; Ardmore Shop</title>
+  <meta name="description" content="Local sports card &amp; slab eBay consignment serving Ardmore, Durant, Madill, Kingston, Sherman &amp; Denison. Keep 75%–85% of net proceeds. Browse live eBay drops, archival supplies, and 96 card checklists.">
   <link rel="icon" type="image/png" href="assets/images/logo.png">
   <link rel="canonical" href="https://getpocketcash.com/">
-  
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://getpocketcash.com/">
-  <meta property="og:title" content="Pocket Cash Cards – Score Big, Spend Small">
-  <meta property="og:description" content="Southern Oklahoma's premier spot for sports cards, rare collectibles, and daily eBay card drops.">
+  <meta property="og:title" content="Pocket Cash Cards – Consign Your Cards (Keep 75%–85%) &amp; Shop Live Drops">
+  <meta property="og:description" content="Texoma local eBay card consignment with Zion case transport, fire-rated safe custody, and Zelle payouts — plus our Ardmore shop and live eBay vault.">
   <meta property="og:image" content="https://getpocketcash.com/assets/images/logo.png">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://getpocketcash.com/">
-  <meta property="twitter:title" content="Pocket Cash Cards – Score Big, Spend Small">
-  <meta property="twitter:description" content="Southern Oklahoma's premier spot for sports cards, rare collectibles, and daily eBay card drops.">
+  <meta property="twitter:title" content="Pocket Cash Cards – Consign Your Cards (Keep 75%–85%) &amp; Shop Live Drops">
+  <meta property="twitter:description" content="Texoma local eBay card consignment, live eBay drops, and Ardmore Booth #64.">
   <meta property="twitter:image" content="https://getpocketcash.com/assets/images/logo.png">
+
+  <!-- Display + Clean Sans Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS CDN with Official Brand Colors -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -28,6 +33,10 @@
     tailwind.config = {
       theme: {
         extend: {
+          fontFamily: {
+            display: ['"Bebas Neue"', 'sans-serif'],
+            sans: ['"Instrument Sans"', 'system-ui', 'sans-serif']
+          },
           colors: {
             brand: {
               primary: '#7bbe81',
@@ -35,10 +44,10 @@
               secondary: '#f1654c',
               secondaryHover: '#dc4e35',
               cream: '#eed9a5',
-              dark: '#090E17',
-              navy: '#0F1826',
-              card: '#142033',
-              border: '#1F304B'
+              dark: '#0E1116',
+              navy: '#141922',
+              card: '#181E29',
+              border: '#263042'
             }
           }
         }
@@ -99,551 +108,786 @@
     ]
   }
   </script>
+
+  <style>
+    .font-display { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.03em; }
+    .hero-glow {
+      background: radial-gradient(circle at 20% 25%, rgba(123, 190, 129, 0.16), transparent 50%),
+                  radial-gradient(circle at 82% 75%, rgba(241, 101, 76, 0.14), transparent 48%);
+    }
+    .bento-overlay {
+      background: linear-gradient(180deg, rgba(14,17,22,0.12) 0%, rgba(14,17,22,0.55) 55%, rgba(14,17,22,0.94) 100%);
+    }
+    .faq-answer { display: none; }
+    .faq-item[data-open="true"] .faq-answer { display: block; }
+    .faq-item[data-open="true"] .faq-plus { transform: rotate(45deg); }
+  </style>
 </head>
 <body class="bg-brand-dark text-slate-100 font-sans antialiased min-h-screen flex flex-col selection:bg-brand-primary selection:text-slate-950">
 
-
-
-  <!-- Main Navigation with Official Brand Logo -->
+  <!-- Main Navigation & Affiliate Disclosure -->
   <script src="assets/js/header.js"></script>
 
-  <!-- Hero Section -->
-  <section class="relative bg-gradient-to-b from-brand-navy via-slate-900 to-brand-dark py-14 sm:py-20 border-b border-brand-border overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        
-        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-primary/10 border border-brand-primary/30 text-brand-primary text-xs font-bold uppercase tracking-wider">
-            <span class="w-2 h-2 rounded-full bg-brand-primary animate-pulse"></span>
-            Southern Oklahoma's Premier Card Spot
-          </div>
-          
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
-            Score Big, <br class="hidden sm:block"/>
-            <span class="bg-gradient-to-r from-brand-primary via-brand-cream to-brand-secondary bg-clip-text text-transparent">Spend Small.</span>
-          </h1>
-          
-          <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
-            Your trusted destination for raw vintage stars, modern rookie cards, rare international imports, and hobby supplies. Visit our retail booth in Ardmore, OK, or browse our daily eBay drops with $1 combined shipping.
-          </p>
+  <!-- 1. Wide Hero Showcase Carousel (Consignment First) -->
+  <section class="pt-6 pb-8 sm:pt-8 sm:pb-10">
+    <div class="max-w-[1414px] mx-auto px-4 sm:px-6 lg:px-8 space-y-5">
 
-          <!-- Live Pocket Cash eBay Storefront Search Box (EPN Integrated) -->
-          <form id="pcHomeSearchForm" class="pt-2">
-            <div class="flex flex-col sm:flex-row gap-2.5 bg-slate-900/90 p-2.5 rounded-2xl border border-brand-primary/40 shadow-2xl">
-              <div class="relative flex-1">
-                <input 
-                  type="text" 
-                  id="pcHomeQuery" 
-                  placeholder="Search 10,500+ cards on eBay (e.g. Savannah Bananas, IndyCar, CPBL, Rodeo)..." 
-                  class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3.5 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-brand-primary transition"
-                >
-              </div>
-              <button type="submit" class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-black px-6 py-3.5 rounded-xl shadow-lg transition transform active:scale-95 text-sm shrink-0">
-                <span>🔍 Search eBay Store</span>
-              </button>
-            </div>
-          </form>
-        </div>
+      <div class="relative rounded-3xl overflow-hidden border border-brand-border bg-brand-navy shadow-2xl hero-glow">
+        <div id="heroSlides" class="relative">
 
-        <div class="lg:col-span-5 relative">
-          <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-brand-border bg-slate-900 group">
-            <picture>
-              <source srcset="assets/images/hero_banner.webp" type="image/webp">
-              <img src="assets/images/hero_banner.jpg" alt="Pocket Cash Cards Authentic Raw Showcase at Booth 64, Ardmore OK" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
-            </picture>
-            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/95 via-brand-dark/20 to-transparent flex items-end p-6">
-              <div>
-                <div class="flex items-center gap-2 mb-1">
-                  <span class="px-2 py-0.5 rounded text-[10px] font-black bg-brand-primary text-slate-950 uppercase tracking-wide">100% Real Inventory</span>
-                  <span class="text-xs text-brand-cream font-bold">Booth #64 • Ardmore, OK</span>
-                </div>
-                <span class="text-lg font-black text-white block">Raw Vintage Stars, Modern Rookies &amp; Niche Gems</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- The 3 Pillars Section -->
-  <section class="py-16 sm:py-24 bg-brand-dark relative">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-        <span class="text-brand-cream text-xs sm:text-sm font-bold tracking-widest uppercase">Real Cards • Real Local Store • No Gimmicks</span>
-        <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight">Three Ways to Experience Pocket Cash</h2>
-        <p class="text-slate-400 text-sm sm:text-base">Browse our physical display cases in downtown Ardmore, shop daily eBay card drops, or compare field-tested collector supplies.</p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        
-        <!-- Pillar 1: Ardmore Retail Shop -->
-        <div class="bg-brand-card rounded-2xl border border-brand-border overflow-hidden flex flex-col hover:border-brand-primary/50 transition-all duration-300 shadow-xl group">
-          <div class="h-52 overflow-hidden relative bg-slate-900">
-            <picture>
-              <source srcset="assets/images/ardmore/pocket-cash-cards-booth-64-ardmore-ok-exterior.webp" type="image/webp">
-              <img src="assets/images/ardmore/pocket-cash-cards-booth-64-ardmore-ok-exterior.jpg" alt="Real photo of Pocket Cash Cards Booth #64 inside Texoma Trading Post, Ardmore OK" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-            </picture>
-            <div class="absolute top-3 left-3 bg-brand-primary text-slate-950 font-black text-xs px-3 py-1 rounded-md shadow-md flex items-center gap-1.5">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
-              Booth #64 Ardmore
-            </div>
-          </div>
-          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-            <div class="space-y-2">
-              <h3 class="text-xl font-bold text-white">Ardmore Physical Booth</h3>
-              <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
-                Browse our curated selection of sports singles, hobby supplies, top loaders, and wax packs in person at Booth #64 (Texoma Trading Post). Fresh stock rotated monthly!
-              </p>
-              <div class="pt-2 text-xs text-slate-300 space-y-1.5">
-                <div class="flex items-center gap-2">
-                  <span class="text-brand-primary font-bold">📍</span> 219 W. Main St. #64, Ardmore, OK
-                </div>
-                <div class="flex items-center gap-2">
-                  <span class="text-brand-primary font-bold">🕒</span> Tue-Fri: 10am - 5:30pm | Sat: 10am - 3pm
-                </div>
-              </div>
-            </div>
-            <div class="pt-4 border-t border-slate-800 flex gap-2">
-              <a href="ardmore.html" class="flex-1 text-center bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold py-2.5 rounded-lg transition">
-                Booth Details &amp; Photos
-              </a>
-              <a href="https://maps.app.goo.gl/GS6HvHtihaNX4KUv6" target="_blank" rel="noopener noreferrer" class="flex-1 text-center bg-brand-primary hover:bg-brand-primaryHover text-slate-950 text-xs font-black py-2.5 rounded-lg transition flex items-center justify-center gap-1">
-                Directions ↗
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Pillar 2: Daily eBay Store -->
-        <div class="bg-brand-card rounded-2xl border border-brand-border overflow-hidden flex flex-col hover:border-brand-secondary/50 transition-all duration-300 shadow-xl group">
-          <div class="h-52 overflow-hidden relative bg-slate-900">
-            <picture>
-              <source srcset="assets/images/ardmore/baseball-cards-wax-packs-booth-64-ardmore-ok.webp" type="image/webp">
-              <img src="assets/images/ardmore/baseball-cards-wax-packs-booth-64-ardmore-ok.jpg" alt="Daily eBay Card Drops, Raw Singles and Wax Packs" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-            </picture>
-            <div class="absolute top-3 left-3 bg-brand-secondary text-white font-black text-xs px-3 py-1 rounded-md shadow-md flex items-center gap-1.5">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
-              Daily Online Drops
-            </div>
-          </div>
-          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-            <div class="space-y-2">
-              <h3 class="text-xl font-bold text-white">Daily eBay Store</h3>
-              <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
-                Shop our extensive online catalog of raw singles, key rookies, minor league gems, and serial-numbered parallels with combined shipping discounts.
-              </p>
-              <div class="pt-2 text-xs text-slate-300 space-y-1.5">
-                <div class="flex items-center gap-2">
-                  <span class="text-brand-cream font-bold">⭐</span> Top Rated eBay Seller Hub
-                </div>
-                <div class="flex items-center gap-2">
-                  <span class="text-brand-cream font-bold">📦</span> $1 Flat Shipping on Thin Cards &le; $20
-                </div>
-              </div>
-            </div>
-            <div class="pt-4 border-t border-slate-800">
-              <a href="https://ebay.us/dpjwTn" target="_blank" rel="sponsored noopener noreferrer" class="block w-full text-center bg-brand-secondary hover:bg-brand-secondaryHover text-white font-black text-xs sm:text-sm py-2.5 rounded-lg shadow-lg transition">
-                Visit eBay Store ↗
-              </a>
-              <p class="text-[10px] text-slate-500 text-center mt-1.5 font-medium">As an eBay Partner Network Affiliate, Pocket Cash earns from qualifying purchases.</p>
-              <p class="text-xs text-slate-500/80 pt-2">Pocket Cash is a participant in the eBay Partner Network and the Amazon Services LLC Associates Program. As an eBay Partner Network Affiliate and Amazon Associate, Pocket Cash earns from qualifying purchases.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Pillar 3: Collector Supplies & Archival Gear Guide -->
-        <div class="bg-brand-card rounded-2xl border border-brand-border overflow-hidden flex flex-col hover:border-brand-primary/50 transition-all duration-300 shadow-xl group">
-          <div class="h-52 overflow-hidden relative bg-slate-900">
-            <picture>
-              <source srcset="assets/images/ardmore/hobby-supplies-toploaders-penny-sleeves-ardmore-ok.webp" type="image/webp">
-              <img src="assets/images/ardmore/hobby-supplies-toploaders-penny-sleeves-ardmore-ok.jpg" alt="Field-Tested Archival Card Supplies and Top Loaders at Booth 64 Ardmore OK" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-            </picture>
-            <div class="absolute top-3 left-3 bg-slate-800 text-brand-primary border border-brand-primary/30 font-bold text-xs px-3 py-1 rounded-md shadow-md flex items-center gap-1.5">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-              Archival Protection
-            </div>
-          </div>
-          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-            <div class="space-y-2">
-              <h3 class="text-xl font-bold text-white group-hover:text-brand-primary transition-colors">Archival Supplies &amp; Gear Guide</h3>
-              <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
-                Never risk a high-end card to cloudy, PVC-leaching sleeves. Compare 40 field-tested penny sleeves, toploaders, Card Savers, and centering tools with direct prices.
-              </p>
-              <div class="pt-2 text-xs text-slate-300 space-y-1.5">
-                <div class="flex items-center gap-2">
-                  <span class="text-brand-primary">🛡️</span> Pro-Mold Magnetic One-Touches &amp; Toploaders
-                </div>
-                <div class="flex items-center gap-2">
-                  <span class="text-brand-primary">📐</span> PSA Bench Centering Rulers &amp; 60x Loupes
-                </div>
-              </div>
-            </div>
-            <div class="pt-4 border-t border-slate-800">
-              <a href="supplies.html" class="block w-full text-center bg-brand-primary/10 hover:bg-brand-primary text-brand-primary hover:text-slate-950 border border-brand-primary/30 font-bold text-xs sm:text-sm py-2.5 rounded-lg shadow-lg transition duration-200">
-                Browse Supplies Guide ➔
-              </a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Free Collector Checklists & Audio Equipment Directories Showcase -->
-  <section class="py-16 sm:py-20 bg-gradient-to-b from-brand-dark via-slate-900 to-brand-dark border-t border-brand-border">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-      
-      <div class="text-center max-w-3xl mx-auto space-y-3">
-        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider bg-brand-primary/10 text-brand-primary border border-brand-primary/30">
-          <span>📚</span> Free Collector Tools &amp; Directories
-        </span>
-        <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight">Checklists, Value Guides &amp; Local Consignment</h2>
-        <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
-          Explore our free collector databases built for hobbyists, pickers, and flippers. Track 96 niche card sets with live eBay comps, buy archival card supplies, or consign your collection locally and keep up to 75% of net proceeds.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        
-        <!-- Showcase 1: Trading Card Checklists & Price Guides -->
-        <div class="bg-brand-card rounded-2xl border border-brand-border p-6 sm:p-8 hover:border-brand-primary/50 transition-all duration-300 flex flex-col justify-between group shadow-xl">
-          <div class="space-y-5">
-            <div class="flex items-center justify-between">
-              <span class="w-12 h-12 rounded-xl bg-brand-primary/10 text-brand-primary border border-brand-primary/30 flex items-center justify-center text-2xl">
-                ⚾
+          <!-- Slide 1 (Default): Local Consignment -->
+          <div class="hero-slide grid grid-cols-1 lg:grid-cols-12 items-center min-h-[430px] sm:min-h-[470px]">
+            <div class="lg:col-span-7 p-7 sm:p-12 lg:p-14 space-y-5 z-10">
+              <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-primary/15 border border-brand-primary/40 text-brand-primary text-xs font-bold uppercase tracking-wider">
+                <span class="w-2 h-2 rounded-full bg-brand-primary animate-pulse"></span>
+                Texoma Local eBay Consignment
               </span>
-              <span class="text-xs font-bold font-mono uppercase px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
-                96 Sets Live • Live Comps
-              </span>
-            </div>
-            
-            <div class="space-y-2">
-              <h3 class="text-2xl font-black text-white group-hover:text-brand-primary transition">
-                Trading Card Checklists &amp; Floor Guides
-              </h3>
-              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                Full card checklists, print run estimates, key rookie chase guides, and real-time eBay market floor pricing. Covers obscure and booming niches that major price guides ignore.
+              <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl text-white leading-[0.95] uppercase">
+                Consign Your Cards.<br>
+                <span class="text-brand-primary">Keep 75% to 85%</span> of Net.
+              </h1>
+              <p class="text-slate-300 text-sm sm:text-base max-w-xl leading-relaxed">
+                Got <strong class="text-white">$20+ graded slabs, autographs, or vintage stars</strong>? Skip 50% shop buy-offers and mail-in anxiety. We meet in person across Ardmore, Durant, Madill, Sherman &amp; Denison, store your cards in a fire-rated safe, and list them with pro scans + 1080p video.
               </p>
-            </div>
-
-            <!-- Category Chips -->
-            <div class="flex flex-wrap gap-2 pt-2">
-              <span class="text-[11px] font-semibold bg-slate-900 text-slate-300 px-2.5 py-1 rounded-lg border border-slate-800">Leaf Metal Pickleball</span>
-              <span class="text-[11px] font-semibold bg-slate-900 text-slate-300 px-2.5 py-1 rounded-lg border border-slate-800">PWHL Women's Hockey</span>
-              <span class="text-[11px] font-semibold bg-slate-900 text-slate-300 px-2.5 py-1 rounded-lg border border-slate-800">AEW All Elite Wrestling</span>
-              <span class="text-[11px] font-semibold bg-slate-900 text-slate-300 px-2.5 py-1 rounded-lg border border-slate-800">AU Pro Volleyball</span>
-              <span class="text-[11px] font-semibold bg-slate-900 text-slate-300 px-2.5 py-1 rounded-lg border border-slate-800">USL Soccer</span>
-              <span class="text-[11px] font-semibold bg-slate-900 text-slate-300 px-2.5 py-1 rounded-lg border border-slate-800">The Ocho &amp; UFA Frisbee</span>
-              <span class="text-[11px] font-semibold bg-slate-900 text-slate-300 px-2.5 py-1 rounded-lg border border-slate-800">Banana Ball</span>
-              <span class="text-[11px] font-semibold bg-slate-900 text-slate-300 px-2.5 py-1 rounded-lg border border-slate-800">IndyCar Racing</span>
-            </div>
-          </div>
-
-          <div class="pt-6 mt-6 border-t border-slate-800 flex items-center justify-between">
-            <span class="text-xs text-slate-400 font-medium">Instant search &amp; dual table/grid views</span>
-            <a href="checklists/index.html" class="inline-flex items-center gap-1.5 bg-brand-primary hover:bg-brand-primaryHover text-slate-950 font-black text-xs sm:text-sm px-4 py-2.5 rounded-xl shadow-lg transition transform group-hover:translate-x-1">
-              Browse Checklists →
-            </a>
-          </div>
-        </div>
-
-        <!-- Showcase 2: Texoma Sports Card & Slab Consignment -->
-        <div class="bg-brand-card rounded-2xl border border-brand-border p-6 sm:p-8 hover:border-amber-500/50 transition-all duration-300 flex flex-col justify-between group shadow-xl">
-          <div class="space-y-5">
-            <div class="flex items-center justify-between">
-              <span class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/30 flex items-center justify-center text-2xl">
-                🤝
-              </span>
-              <span class="text-xs font-bold font-mono uppercase px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/30">
-                Keep 75%–85% of Net on Auctions
-              </span>
-            </div>
-            
-            <div class="space-y-2">
-              <div class="text-[11px] font-bold text-amber-400 uppercase tracking-wider">Carter, Bryan, Marshall &amp; Grayson Counties</div>
-              <h3 class="text-2xl font-black text-white group-hover:text-amber-400 transition">
-                Texoma Sports Card &amp; Slab Consignment
-              </h3>
-              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-                Have a card collection or PSA/SGC slabs sitting in a closet? We meet you in person, store your cards in a fire-rated safe, list them on eBay with front/back scans and a 1080p video, and pay you by Zelle with a line-by-line settlement sheet. $5 per card intake fee; you set the starting bid.
-              </p>
-            </div>
-
-            <!-- Benefit Chips -->
-            <div class="flex flex-wrap gap-2 pt-2">
-              <span class="text-[11px] font-semibold bg-slate-900 text-amber-300 px-2.5 py-1 rounded-lg border border-amber-500/30">85% on $500+ Slabs / 75% Std</span>
-              <span class="text-[11px] font-semibold bg-slate-900 text-slate-300 px-2.5 py-1 rounded-lg border border-slate-800">Marshall County OK</span>
-              <span class="text-[11px] font-semibold bg-slate-900 text-slate-300 px-2.5 py-1 rounded-lg border border-slate-800">Bryan County OK (Durant)</span>
-              <span class="text-[11px] font-semibold bg-slate-900 text-slate-300 px-2.5 py-1 rounded-lg border border-slate-800">Grayson County TX (Sherman/Denison)</span>
-              <span class="text-[11px] font-semibold bg-slate-900 text-slate-300 px-2.5 py-1 rounded-lg border border-slate-800">Fire-Rated Safe Custody</span>
-              <span class="text-[11px] font-semibold bg-slate-900 text-slate-300 px-2.5 py-1 rounded-lg border border-slate-800">Zelle Payouts + Settlement Sheet</span>
-            </div>
-          </div>
-
-          <div class="pt-6 mt-6 border-t border-slate-800 flex items-center justify-between">
-            <span class="text-xs text-slate-400 font-medium">Review terms &amp; download intake PDF</span>
-            <a href="consignment.html" class="inline-flex items-center gap-1.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs sm:text-sm px-4 py-2.5 rounded-xl shadow-lg transition transform group-hover:translate-x-1">
-              Consignment Details →
-            </a>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Interactive Collection Valuation & Sourcing Hub -->
-  <section id="buylist" class="py-16 bg-gradient-to-r from-slate-950 via-brand-navy to-slate-950 border-y border-brand-border">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="bg-brand-card/95 rounded-3xl p-6 sm:p-10 border border-brand-border shadow-2xl space-y-8">
-        
-        <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 pb-6 border-b border-brand-border">
-          <div class="space-y-2">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider bg-brand-primary/10 text-brand-primary border border-brand-primary/30">
-              <span>💼</span> Local eBay Consignment • Keep 75%–85%
-            </div>
-            <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight">Want to Consign Your Cards? Get a Fast Review.</h2>
-            <p class="text-slate-300 text-sm sm:text-base max-w-2xl leading-relaxed">
-              Send us photos or details of your $20+ graded slabs, vintage stars, modern rookies, or estate collections across Southern Oklahoma and North Texas. Let our 60,000+ listing eBay storefront sell your cards while you keep 75%–85% of net proceeds.
-            </p>
-          </div>
-          <div class="flex items-center gap-3">
-            <a href="tel:4054597176" class="inline-flex items-center gap-2 bg-brand-primary hover:bg-brand-primaryHover text-slate-950 font-black text-sm px-5 py-3 rounded-xl shadow-lg transition whitespace-nowrap">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-              <span>Call (405) 459-7176</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          
-          <!-- Interactive Appraisal Intake Form -->
-          <div class="lg:col-span-7 bg-slate-900/90 p-6 rounded-2xl border border-slate-800 space-y-4">
-            <h3 class="text-lg font-black text-white flex items-center gap-2">
-              <span>📋</span> Tell Us What You Have (Takes 60 Seconds)
-            </h3>
-            
-            <form id="appraisalForm" onsubmit="handleAppraisalSubmit(event)" class="space-y-4">
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <div>
-                  <label class="block text-xs font-semibold text-slate-400 mb-1">Collection Era / Type</label>
-                  <select id="cardType" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-brand-primary">
-                    <option value="Vintage (Pre-1975 Stars & Sets)">Vintage (Pre-1975 Stars & Sets)</option>
-                    <option value="Modern Rookies, Autos & Relics">Modern Rookies, Autos & Relics</option>
-                    <option value="Sealed Wax Boxes & Factory Sets">Sealed Wax Boxes & Factory Sets</option>
-                    <option value="90s Marvel / Non-Sports / Pop Culture">90s Marvel / Non-Sports / Pop Culture</option>
-                    <option value="Complete Estate / Binders & Bulk">Complete Estate / Binders & Bulk</option>
-                  </select>
-                </div>
-                <div>
-                  <label class="block text-xs font-semibold text-slate-400 mb-1">Approximate Quantity</label>
-                  <select id="cardQty" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:border-brand-primary">
-                    <option value="1 to 20 High-Value Singles/Slabs">1 to 20 High-Value Singles/Slabs</option>
-                    <option value="1 to 3 Binders / Small Lot">1 to 3 Binders / Small Lot</option>
-                    <option value="1 to 5 Monster Boxes (1,000 - 5,000 cards)">1 to 5 Monster Boxes (1,000 - 5,000 cards)</option>
-                    <option value="Entire Room / Estate Collection">Entire Room / Estate Collection</option>
-                  </select>
-                </div>
-              </div>
-
-              <div>
-                <label class="block text-xs font-semibold text-slate-400 mb-1">Key Players, Sets, or Highlights</label>
-                <input type="text" id="cardHighlights" placeholder="e.g. 1971 Topps baseball, Mantle, Griffey rookies, 90s Marvel..." required class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-brand-primary">
-              </div>
-
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <div>
-                  <label class="block text-xs font-semibold text-slate-400 mb-1">Your Name &amp; Town</label>
-                  <input type="text" id="sellerLocation" placeholder="e.g. David - Ardmore / Sherman" required class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-brand-primary">
-                </div>
-                <div>
-                  <label class="block text-xs font-semibold text-slate-400 mb-1">Phone or Email</label>
-                  <input type="text" id="sellerContact" placeholder="e.g. (405) 555-0199 or name@gmail.com" required class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-brand-primary">
-                </div>
-              </div>
-
-              <div class="pt-2 flex flex-col sm:flex-row items-center gap-3">
-                <button type="submit" class="w-full sm:w-auto flex-1 bg-brand-primary hover:bg-brand-primaryHover text-slate-950 font-black text-xs sm:text-sm py-3 px-6 rounded-xl shadow-lg transition">
-                  ✉️ Send Consignment Review Request
-                </button>
-                <a href="consignment.html" class="w-full sm:w-auto text-center bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white font-bold text-xs py-3 px-4 rounded-xl border border-slate-700 transition">
-                  Rates &amp; Payout Calculator →
+              <div class="flex flex-wrap items-center gap-3 pt-1">
+                <a href="consignment.html" class="bg-brand-primary hover:bg-brand-primaryHover text-slate-950 font-bold text-sm px-7 py-3.5 rounded-full shadow-lg transition">
+                  Schedule Local Drop-Off →
+                </a>
+                <a href="#consignment-tiers" class="bg-slate-800/90 hover:bg-slate-700 text-white font-semibold text-sm px-6 py-3.5 rounded-full border border-slate-700 transition">
+                  See Commission Tiers
                 </a>
               </div>
-            </form>
-
-            <div id="appraisalSuccess" class="hidden p-3 rounded-xl bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 text-xs font-bold text-center">
-              ✓ Opening your email client to dispatch details to David at Pocket Cash!
+              <div class="flex flex-wrap gap-x-6 gap-y-2 pt-2 text-xs text-slate-300 font-semibold">
+                <span class="text-brand-primary">✓ $5/Card Intake + Free Relist</span>
+                <span class="text-brand-cream">✓ Zion Hard-Case Meet-Up</span>
+                <span>✓ Monthly Zelle Payouts</span>
+              </div>
             </div>
-          </div>
-
-          <!-- Real Vintage Inventory Visual & Guarantees -->
-          <div class="lg:col-span-5 space-y-4">
-            <div class="rounded-2xl overflow-hidden shadow-xl border border-brand-border bg-slate-900 group">
+            <div class="lg:col-span-5 relative h-64 sm:h-80 lg:h-full min-h-[280px] overflow-hidden">
               <picture>
                 <source srcset="assets/images/ardmore/vintage-sports-cards-texoma-trading-post-ardmore-ok.webp" type="image/webp">
-                <img src="assets/images/ardmore/vintage-sports-cards-texoma-trading-post-ardmore-ok.jpg" alt="Real vintage sports cards and local consignment in Texoma" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                <img src="assets/images/ardmore/vintage-sports-cards-texoma-trading-post-ardmore-ok.jpg" alt="Vintage sports cards and graded slabs accepted for Pocket Cash local consignment" class="w-full h-full object-cover">
               </picture>
-              <div class="p-3 bg-brand-navy text-[11px] text-slate-300 border-t border-brand-border">
-                <span>📦 Local Zion Case intake &amp; fire-rated safe custody</span>
+              <div class="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/35 to-transparent lg:block hidden"></div>
+              <div class="absolute bottom-5 right-5 left-5 sm:left-auto bg-brand-dark/90 backdrop-blur border border-brand-border rounded-2xl p-4 shadow-xl max-w-xs ml-auto">
+                <div class="text-[11px] uppercase tracking-wider text-brand-cream font-bold">Highest Consignor Split</div>
+                <div class="font-display text-3xl text-white leading-none mt-1">85% Back on $500+ Slabs</div>
+                <div class="text-xs text-slate-400 mt-1">Line-by-line settlement • $0 transfer fees</div>
               </div>
             </div>
+          </div>
 
-            <div class="p-4 bg-slate-900/80 rounded-xl border border-slate-800 text-xs space-y-2 text-slate-300">
-              <div class="flex items-center gap-2">
-                <span class="text-brand-primary font-bold">✓</span>
-                <span><strong>$0 In-Person Meet-Up</strong> across Carter, Bryan, Marshall &amp; Grayson Co.</span>
+          <!-- Slide 2: Live eBay Storefront -->
+          <div class="hero-slide hidden grid grid-cols-1 lg:grid-cols-12 items-center min-h-[430px] sm:min-h-[470px]">
+            <div class="lg:col-span-7 p-7 sm:p-12 lg:p-14 space-y-5 z-10">
+              <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-secondary/15 border border-brand-secondary/40 text-brand-secondary text-xs font-bold uppercase tracking-wider">
+                Live Vault • Auto-Synced Daily
+              </span>
+              <h2 class="font-display text-5xl sm:text-6xl lg:text-7xl text-white leading-[0.95] uppercase">
+                10,500+ Live Cards.<br>
+                <span class="text-brand-cream">Score Big, Spend Small.</span>
+              </h2>
+              <p class="text-slate-300 text-sm sm:text-base max-w-xl leading-relaxed">
+                Shop raw vintage stars, Banana Ball, IndyCar, Taiwan CPBL imports, PRCA Rodeo, and graded slabs with actual front &amp; back scans and combined shipping.
+              </p>
+              <div class="flex flex-wrap items-center gap-3 pt-1">
+                <a href="shop.html" class="bg-brand-secondary hover:bg-brand-secondaryHover text-white font-bold text-sm px-7 py-3.5 rounded-full shadow-lg transition">
+                  Browse Top 10 Live Cards →
+                </a>
+                <a href="https://www.ebay.com/str/pocketcash?mkcid=1&amp;mkrid=711-53200-19255-0&amp;siteid=0&amp;campid=5339204284&amp;customid=hero_ebay_store&amp;toolid=10001&amp;mkevt=1" target="_blank" rel="sponsored noopener noreferrer" class="bg-slate-800/90 hover:bg-slate-700 text-white font-semibold text-sm px-6 py-3.5 rounded-full border border-slate-700 transition">
+                  Shop Full eBay Store ↗
+                </a>
               </div>
-              <div class="flex items-center gap-2">
-                <span class="text-brand-primary font-bold">✓</span>
-                <span><strong>Keep 75%–85% of Net Proceeds</strong> (85% on $500+ graded slabs)</span>
+            </div>
+            <div class="lg:col-span-5 relative h-64 sm:h-80 lg:h-full min-h-[280px] overflow-hidden">
+              <picture>
+                <source srcset="assets/images/ebay_drops.webp" type="image/webp">
+                <img src="assets/images/ebay_drops.jpg" alt="Pocket Cash Cards daily eBay card drops" class="w-full h-full object-cover">
+              </picture>
+              <div class="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/35 to-transparent lg:block hidden"></div>
+            </div>
+          </div>
+
+          <!-- Slide 3: Ardmore Retail Store -->
+          <div class="hero-slide hidden grid grid-cols-1 lg:grid-cols-12 items-center min-h-[430px] sm:min-h-[470px]">
+            <div class="lg:col-span-7 p-7 sm:p-12 lg:p-14 space-y-5 z-10">
+              <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-primary/15 border border-brand-primary/40 text-brand-primary text-xs font-bold uppercase tracking-wider">
+                Booth #64 • Downtown Ardmore, OK
+              </span>
+              <h2 class="font-display text-5xl sm:text-6xl lg:text-7xl text-white leading-[0.95] uppercase">
+                Real Cards.<br>
+                <span class="text-brand-primary">Real Local Card Shop.</span>
+              </h2>
+              <p class="text-slate-300 text-sm sm:text-base max-w-xl leading-relaxed">
+                Visit us Tuesday through Saturday inside Texoma Trading Post (219 W. Main St. #64) for singles, wax packs, toploaders, and local consignment drop-offs.
+              </p>
+              <div class="flex flex-wrap items-center gap-3 pt-1">
+                <a href="ardmore.html" class="bg-brand-primary hover:bg-brand-primaryHover text-slate-950 font-bold text-sm px-7 py-3.5 rounded-full shadow-lg transition">
+                  Booth Info &amp; Hours →
+                </a>
+                <a href="https://maps.app.goo.gl/GS6HvHtihaNX4KUv6" target="_blank" rel="noopener noreferrer" class="bg-slate-800/90 hover:bg-slate-700 text-white font-semibold text-sm px-6 py-3.5 rounded-full border border-slate-700 transition">
+                  Google Maps Directions ↗
+                </a>
               </div>
-              <div class="flex items-center gap-2">
-                <span class="text-brand-primary font-bold">✓</span>
-                <span><strong>1080p Video Listings &amp; Zelle Payouts</strong> with line-by-line settlement</span>
-              </div>
+            </div>
+            <div class="lg:col-span-5 relative h-64 sm:h-80 lg:h-full min-h-[280px] overflow-hidden">
+              <picture>
+                <source srcset="assets/images/ardmore/pocket-cash-cards-booth-64-ardmore-ok-exterior.webp" type="image/webp">
+                <img src="assets/images/ardmore/pocket-cash-cards-booth-64-ardmore-ok-exterior.jpg" alt="Pocket Cash Cards Booth 64 in Ardmore, OK" class="w-full h-full object-cover">
+              </picture>
+              <div class="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/35 to-transparent lg:block hidden"></div>
             </div>
           </div>
 
         </div>
 
+        <!-- Prev / Next Arrows -->
+        <button id="heroPrev" type="button" aria-label="Previous slide" class="hidden sm:flex absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-brand-dark/80 hover:bg-brand-dark text-white border border-brand-border items-center justify-center transition shadow-lg">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <button id="heroNext" type="button" aria-label="Next slide" class="hidden sm:flex absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-brand-dark/80 hover:bg-brand-dark text-white border border-brand-border items-center justify-center transition shadow-lg">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+        </button>
+
+        <!-- Slide Dash Indicators -->
+        <div class="flex items-center justify-center gap-2 pb-4 pt-1 bg-brand-navy/60">
+          <button type="button" data-slide="0" aria-label="Slide 1: Consignment" class="hero-dot h-1.5 w-8 rounded-full bg-brand-primary transition-all"></button>
+          <button type="button" data-slide="1" aria-label="Slide 2: Live eBay Store" class="hero-dot h-1.5 w-4 rounded-full bg-slate-600 hover:bg-slate-400 transition-all"></button>
+          <button type="button" data-slide="2" aria-label="Slide 3: Ardmore Shop" class="hero-dot h-1.5 w-4 rounded-full bg-slate-600 hover:bg-slate-400 transition-all"></button>
+        </div>
       </div>
+
+      <!-- Clean Single-Line Store Search Bar -->
+      <form id="pcHomeSearchForm" class="max-w-3xl mx-auto">
+        <div class="flex flex-col sm:flex-row gap-2 bg-brand-card p-2 rounded-2xl border border-brand-border shadow-lg">
+          <input
+            type="text"
+            id="pcHomeQuery"
+            placeholder="Search our live eBay inventory (e.g., Savannah Bananas, PSA, CPBL, IndyCar, Mantle)..."
+            class="flex-1 bg-brand-dark border border-brand-border rounded-xl px-4 py-3 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-brand-primary transition"
+          >
+          <button type="submit" class="bg-brand-primary hover:bg-brand-primaryHover text-slate-950 font-bold text-sm px-6 py-3 rounded-xl transition shrink-0">
+            Search eBay Store
+          </button>
+        </div>
+      </form>
+
     </div>
   </section>
 
-  <script>
-    function handleAppraisalSubmit(e) {
-      e.preventDefault();
-      const type = document.getElementById('cardType').value;
-      const qty = document.getElementById('cardQty').value;
-      const highlights = document.getElementById('cardHighlights').value;
-      const location = document.getElementById('sellerLocation').value;
-      const contact = document.getElementById('sellerContact').value;
-      
-      const subject = encodeURIComponent('Card Consignment & Collection Review Request: ' + type);
-      const body = encodeURIComponent(
-        'Hello David,\n\nI have cards I would like to review for Pocket Cash local eBay consignment:\n\n' +
-        '• Era / Type: ' + type + '\n' +
-        '• Approximate Count: ' + qty + '\n' +
-        '• Key Highlights / Players: ' + highlights + '\n' +
-        '• Name & Location: ' + location + '\n' +
-        '• Phone / Contact: ' + contact + '\n\n' +
-        'Looking forward to your consignment review!\n'
-      );
-      
-      document.getElementById('appraisalSuccess').classList.remove('hidden');
-      window.location.href = 'mailto:info@getpocketcash.com?subject=' + subject + '&body=' + body;
-    }
-  </script>
+  <!-- 2. Consignment Program Highlight & Tiers -->
+  <section id="consignment-tiers" class="py-12 sm:py-16 border-t border-brand-border/60 bg-brand-navy/35">
+    <div class="max-w-[1414px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
 
-  <!-- VIP Club / Mailchimp Newsletter Section -->
-  <section class="py-16 bg-brand-dark">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-      <div class="w-14 h-14 bg-brand-primary/10 border border-brand-primary/30 rounded-2xl flex items-center justify-center mx-auto text-brand-primary">
-        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-      </div>
-      <h2 class="text-3xl font-black text-white tracking-tight">Join the Pocket Cash VIP Collector's Club</h2>
-      <p class="text-slate-400 text-sm sm:text-base max-w-xl mx-auto">
-        Get early notifications on raw vintage set drops, rare international box breaks, and private community deals sent straight to your inbox.
-      </p>
-      <div class="pt-2">
-        <a href="https://mailchi.mp/e4605a56db23/pocket-cash-cards" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-brand-primary hover:bg-brand-primaryHover text-slate-950 font-black text-base px-8 py-3.5 rounded-xl shadow-xl transition transform hover:-translate-y-0.5">
-          Join the Collector's Club ↗
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-brand-primary">Highest Local Payout Split in Texoma</span>
+          <h2 class="font-display text-4xl sm:text-5xl text-white uppercase mt-1">Sell With Pocket Cash Consignment</h2>
+        </div>
+        <a href="consignment.html" class="text-sm font-bold text-brand-primary hover:text-brand-primaryHover transition inline-flex items-center gap-1.5">
+          Open Interactive Payout Calculator &amp; PDF Agreement →
         </a>
       </div>
-    </div>
-  </section>
 
-  <!-- Footer with Official Brand Logo -->
-  <footer class="mt-auto bg-slate-950 border-t border-brand-border text-slate-400 text-xs py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-      
-      <div class="space-y-3">
-        <img src="assets/images/logo.png" alt="Pocket Cash Cards" class="h-10 w-auto object-contain">
-        <p class="text-slate-400 leading-relaxed">
-          Score Big, Spend Small. Southern Oklahoma's premier destination for sports cards, raw vintage gems, and unique collectibles.
-        </p>
+      <!-- 3 Commission Tier Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div class="bg-brand-card rounded-2xl border border-amber-400/40 p-6 sm:p-7 flex flex-col justify-between space-y-4">
+          <div class="space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold uppercase tracking-wider text-brand-cream">$500+ Graded Slabs</span>
+              <span class="font-display text-4xl text-brand-cream">KEEP 85%</span>
+            </div>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              7-day eBay auction for high-end slabs ($500.00+). Only 15% commission on net proceeds — built to maximize net return on grails.
+            </p>
+          </div>
+          <div class="text-xs text-slate-400 pt-3 border-t border-brand-border">$5/card intake • 1 free relist • Insured USPS</div>
+        </div>
+
+        <div class="bg-brand-card rounded-2xl border-2 border-brand-primary p-6 sm:p-7 flex flex-col justify-between space-y-4 relative shadow-xl">
+          <span class="absolute -top-3 right-5 bg-brand-primary text-slate-950 font-bold text-[11px] uppercase px-3 py-0.5 rounded-full">Most Popular</span>
+          <div class="space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold uppercase tracking-wider text-brand-primary">7-Day Auctions ($15–$499)</span>
+              <span class="font-display text-4xl text-brand-primary">KEEP 75%</span>
+            </div>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              You pick the starting bid ($15 minimum, no reserves). Includes high-res scans, custom 1080p listing video, and free non-paying bidder relists.
+            </p>
+          </div>
+          <div class="text-xs text-slate-400 pt-3 border-t border-brand-border">$5/card intake • 1 free relist • Monthly Zelle</div>
+        </div>
+
+        <div class="bg-brand-card rounded-2xl border border-brand-border p-6 sm:p-7 flex flex-col justify-between space-y-4">
+          <div class="space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold uppercase tracking-wider text-brand-secondary">30-Day Buy-It-Now ($75+)</span>
+              <span class="font-display text-4xl text-brand-secondary">KEEP 65%</span>
+            </div>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Fixed-price eBay listings with optional Best Offer floor for patient collectors targeting specific comps. Includes 90 days fire-safe custody.
+            </p>
+          </div>
+          <div class="text-xs text-slate-400 pt-3 border-t border-brand-border">$5/card intake • $3 optional 30-day renewal</div>
+        </div>
       </div>
 
-      <div class="space-y-2">
-        <h4 class="text-white font-bold text-sm">Ardmore Store</h4>
-        <p class="text-slate-400">
-          219 W. Main St. #64<br>
-          Ardmore, OK 73401<br>
-          Tue - Fri: 10:00 am - 5:30 pm<br>
-          Sat: 10:00 am - 3:00 pm<br>
-          Sun - Mon: Closed
-        </p>
-      </div>
-
-      <div class="space-y-2">
-        <h4 class="text-white font-bold text-sm">Contact Us</h4>
-        <p class="text-slate-400 space-y-1">
-          <span class="block">Phone: <a href="tel:4054597176" class="text-brand-primary hover:underline font-medium">405-459-7176</a></span>
-          <span class="block">Email: <a href="mailto:info@getpocketcash.com" class="text-brand-primary hover:underline">info@getpocketcash.com</a></span>
-        </p>
-      </div>
-
-      <div class="space-y-2">
-        <h4 class="text-white font-bold text-sm">Follow & Community</h4>
-        <div class="flex flex-col space-y-2">
-          <a href="consignment.html" class="hover:text-white flex items-center gap-2 text-brand-primary font-bold">
-            <span>💼</span> Local eBay Consignment
-          </a>
-          <a href="checklists/index.html" class="hover:text-white flex items-center gap-2">
-            <span>📚</span> Checklists & Guides
-          </a>
-          <a href="supplies.html" class="hover:text-white flex items-center gap-2">
-            <span>🛡️</span> Supplies & Archival Gear
-          </a>
-          <a href="https://www.facebook.com/GetPocketCash" target="_blank" rel="noopener noreferrer" class="hover:text-white flex items-center gap-2">
-            <span>👍</span> Facebook (@GetPocketCash)
-          </a>
-          <a href="https://ebay.us/dpjwTn" target="_blank" rel="sponsored noopener noreferrer" class="hover:text-white flex items-center gap-2">
-            <span>📦</span> eBay Official Store
-          </a>
-          <a href="checklists/index.html" class="hover:text-white flex items-center gap-2">
-            <span>📋</span> Set Checklists & Trackers
-          </a>
+      <!-- 4-Step Consignment Strip -->
+      <div class="bg-brand-card rounded-2xl border border-brand-border p-5 sm:p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="flex items-start gap-3">
+          <span class="w-8 h-8 rounded-full bg-brand-primary text-slate-950 font-bold text-sm flex items-center justify-center shrink-0">1</span>
+          <div>
+            <div class="font-bold text-white text-sm">Text 3 Photos</div>
+            <div class="text-xs text-slate-400 mt-0.5">Send photos of $20+ singles or slabs to (405) 459-7176 to confirm eligibility.</div>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="w-8 h-8 rounded-full bg-brand-primary text-slate-950 font-bold text-sm flex items-center justify-center shrink-0">2</span>
+          <div>
+            <div class="font-bold text-white text-sm">Local Zion Case Meet-Up</div>
+            <div class="text-xs text-slate-400 mt-0.5">Zero shipping risk — meet in Ardmore, Durant, Madill, Kingston, Sherman, or Denison.</div>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="w-8 h-8 rounded-full bg-brand-primary text-slate-950 font-bold text-sm flex items-center justify-center shrink-0">3</span>
+          <div>
+            <div class="font-bold text-white text-sm">1080p Video &amp; Safe Custody</div>
+            <div class="text-xs text-slate-400 mt-0.5">Locked in our fire-rated safe while we scan, shoot 1080p shimmer video, and list.</div>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="w-8 h-8 rounded-full bg-brand-primary text-slate-950 font-bold text-sm flex items-center justify-center shrink-0">4</span>
+          <div>
+            <div class="font-bold text-white text-sm">Line-by-Line Zelle Payout</div>
+            <div class="text-xs text-slate-400 mt-0.5">Fee-free monthly Zelle payout with full order math, or 3-day Fast Payout option.</div>
+          </div>
         </div>
       </div>
 
     </div>
+  </section>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-800/80 pt-6 flex flex-col sm:flex-row items-center justify-between text-slate-500 gap-2">
-      <p>&copy; 2026 Pocket Cash Cards. All rights reserved.</p>
-      <p>Ardmore, OK • Mead, OK • Southern Oklahoma</p>
+  <!-- 3. Featured Live Inventory (CardCollector2 4-Across Carousel) -->
+  <section class="py-12 sm:py-16">
+    <div class="max-w-[1414px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+
+      <div class="flex items-end justify-between gap-4 border-b border-brand-border pb-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-brand-secondary">Synced Live Daily From Our eBay Store</span>
+          <h2 class="font-display text-4xl sm:text-5xl text-white uppercase mt-1">Featured In The Vault</h2>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="flex items-center gap-2">
+            <button id="vaultPrev" type="button" aria-label="Previous cards" class="w-9 h-9 rounded-full bg-brand-card hover:bg-slate-800 border border-brand-border text-white flex items-center justify-center transition">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg>
+            </button>
+            <button id="vaultNext" type="button" aria-label="Next cards" class="w-9 h-9 rounded-full bg-brand-card hover:bg-slate-800 border border-brand-border text-white flex items-center justify-center transition">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+          <a href="shop.html" class="hidden sm:inline-block text-sm font-bold text-brand-primary hover:underline whitespace-nowrap">
+            See All 10 Live Cards →
+          </a>
+        </div>
+      </div>
+
+      <!-- 4-Column Dynamic Live Cards Grid (Populated from assets/js/shop-products.js) -->
+      <div id="homeVaultGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="bg-brand-card rounded-2xl border border-brand-border p-6 col-span-full text-center text-sm text-slate-400">
+          Loading live inventory scans from eBay...
+        </div>
+      </div>
+
+      <div class="text-center sm:hidden">
+        <a href="shop.html" class="inline-block bg-brand-card hover:bg-slate-800 text-brand-primary font-bold text-sm px-6 py-3 rounded-full border border-brand-border transition">
+          See All 10 Live Cards →
+        </a>
+      </div>
+
     </div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-3 text-center text-xs text-slate-500/80">
-      <p class="text-xs text-slate-500/80 pt-2">Pocket Cash is a participant in the eBay Partner Network and the Amazon Services LLC Associates Program. As an eBay Partner Network Affiliate and Amazon Associate, Pocket Cash earns from qualifying purchases.</p>
+  </section>
+
+  <!-- 4. Asymmetric 50/50 Bento Grid (Sell, Shop, Checklists & Supplies) -->
+  <section class="py-12 sm:py-16 border-t border-brand-border/60">
+    <div class="max-w-[1414px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+
+      <div class="text-center space-y-2">
+        <h2 class="font-display text-4xl sm:text-5xl text-white uppercase">Sell • Shop • Collect</h2>
+        <p class="text-sm text-slate-400">Everything Pocket Cash offers across Texoma and our online eBay storefront.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+
+        <!-- Tall Left Tile: Consignment -->
+        <a href="consignment.html" class="relative rounded-3xl overflow-hidden border border-brand-border hover:border-brand-primary transition group min-h-[380px] lg:min-h-[540px] flex flex-col justify-end p-7 sm:p-9 bg-brand-card">
+          <picture class="absolute inset-0">
+            <source srcset="assets/images/ardmore/graded-slabs-magnetic-one-touch-cases-ardmore-ok.webp" type="image/webp">
+            <img src="assets/images/ardmore/graded-slabs-magnetic-one-touch-cases-ardmore-ok.jpg" alt="Graded slabs and One-Touch card cases for consignment" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          </picture>
+          <div class="absolute inset-0 bento-overlay"></div>
+          <div class="relative z-10 space-y-2">
+            <span class="inline-block px-3 py-1 rounded-full bg-brand-primary text-slate-950 font-bold text-xs uppercase tracking-wider">Keep 75% – 85% Net</span>
+            <h3 class="font-display text-4xl sm:text-5xl text-white uppercase leading-none">Local Consignment Hub</h3>
+            <p class="text-sm text-slate-200 max-w-md">
+              In-person handoff in Bryan, Marshall, Carter &amp; Grayson Counties. Fire-safe storage, 1080p video, and monthly Zelle settlements.
+            </p>
+            <span class="inline-flex items-center gap-1.5 text-brand-primary font-bold text-sm pt-2 group-hover:translate-x-1 transition-transform">
+              Schedule Meet-Up &amp; Estimate Payout →
+            </span>
+          </div>
+        </a>
+
+        <!-- Right Bento Column -->
+        <div class="flex flex-col gap-5">
+
+          <!-- Top 2 Square-ish Tiles -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 flex-1">
+            <a href="shop.html" class="relative rounded-3xl overflow-hidden border border-brand-border hover:border-brand-secondary transition group min-h-[250px] flex flex-col justify-end p-6 bg-brand-card">
+              <picture class="absolute inset-0">
+                <source srcset="assets/images/ebay_drops.webp" type="image/webp">
+                <img src="assets/images/ebay_drops.jpg" alt="Live eBay card vault and daily drops" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+              </picture>
+              <div class="absolute inset-0 bento-overlay"></div>
+              <div class="relative z-10 space-y-1">
+                <span class="text-[11px] font-bold uppercase tracking-wider text-brand-secondary">Synced Daily</span>
+                <h3 class="font-display text-3xl text-white uppercase leading-none">Live eBay Vault</h3>
+                <p class="text-xs text-slate-300">Flip front &amp; back scans of our top active cards.</p>
+              </div>
+            </a>
+
+            <a href="checklists/index.html" class="relative rounded-3xl overflow-hidden border border-brand-border hover:border-brand-primary transition group min-h-[250px] flex flex-col justify-end p-6 bg-brand-card">
+              <picture class="absolute inset-0">
+                <source srcset="assets/images/card_collection_promo.webp" type="image/webp">
+                <img src="assets/images/card_collection_promo.jpg" alt="Trading card checklists and live comp floor guides" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+              </picture>
+              <div class="absolute inset-0 bento-overlay"></div>
+              <div class="relative z-10 space-y-1">
+                <span class="text-[11px] font-bold uppercase tracking-wider text-brand-primary">96 Niche Sets</span>
+                <h3 class="font-display text-3xl text-white uppercase leading-none">Checklists &amp; Guides</h3>
+                <p class="text-xs text-slate-300">Banana Ball, IndyCar, CPBL, PWHL &amp; live comps.</p>
+              </div>
+            </a>
+          </div>
+
+          <!-- Bottom Wide Tile -->
+          <a href="supplies.html" class="relative rounded-3xl overflow-hidden border border-brand-border hover:border-brand-cream transition group min-h-[250px] flex flex-col justify-end p-6 sm:p-7 bg-brand-card">
+            <picture class="absolute inset-0">
+              <source srcset="assets/images/ardmore/hobby-supplies-toploaders-penny-sleeves-ardmore-ok.webp" type="image/webp">
+              <img src="assets/images/ardmore/hobby-supplies-toploaders-penny-sleeves-ardmore-ok.jpg" alt="Archival card supplies, penny sleeves, and One-Touch cases" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            </picture>
+            <div class="absolute inset-0 bento-overlay"></div>
+            <div class="relative z-10 space-y-1">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-brand-cream">40 Field-Tested Products</span>
+              <h3 class="font-display text-3xl sm:text-4xl text-white uppercase leading-none">Archival Supplies &amp; Storage Gear</h3>
+              <p class="text-xs sm:text-sm text-slate-200 max-w-lg">
+                Compare PVC-free penny sleeves, toploaders, One-Touches, Zion cases, and grading tools.
+              </p>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 5. Uniform 4x2 Category Grid (CardCollector2 "Single Cards" Layout) -->
+  <section class="py-12 sm:py-16 border-t border-brand-border/60">
+    <div class="max-w-[1414px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-brand-secondary">Direct eBay Store Searches</span>
+          <h2 class="font-display text-4xl sm:text-5xl text-white uppercase mt-1">Browse Store Categories</h2>
+        </div>
+        <a href="https://www.ebay.com/str/pocketcash?mkcid=1&amp;mkrid=711-53200-19255-0&amp;siteid=0&amp;campid=5339204284&amp;customid=cat_all_store&amp;toolid=10001&amp;mkevt=1" target="_blank" rel="sponsored noopener noreferrer" class="text-sm font-bold text-brand-secondary hover:underline">
+          Shop Full eBay Store ↗
+        </a>
+      </div>
+
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+
+        <a href="https://www.ebay.com/str/pocketcash?mkcid=1&amp;mkrid=711-53200-19255-0&amp;siteid=0&amp;campid=5339204284&amp;customid=cat_all&amp;toolid=10001&amp;mkevt=1" target="_blank" rel="sponsored noopener noreferrer" class="relative aspect-square rounded-2xl overflow-hidden border border-brand-border hover:border-brand-primary transition group flex items-end p-5">
+          <picture class="absolute inset-0">
+            <source srcset="assets/images/hero_banner.webp" type="image/webp">
+            <img src="assets/images/hero_banner.jpg" alt="All active Pocket Cash eBay cards" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          </picture>
+          <div class="absolute inset-0 bento-overlay"></div>
+          <span class="relative z-10 font-display text-2xl sm:text-3xl text-white uppercase leading-tight">All Active Listings</span>
+        </a>
+
+        <a href="https://www.ebay.com/sch/i.html?_ssn=pocketcash&amp;_nkw=PSA+OR+SGC+OR+BGS&amp;_sop=16&amp;mkcid=1&amp;mkrid=711-53200-19255-0&amp;siteid=0&amp;campid=5339204284&amp;customid=cat_slabs&amp;toolid=10001&amp;mkevt=1" target="_blank" rel="sponsored noopener noreferrer" class="relative aspect-square rounded-2xl overflow-hidden border border-brand-border hover:border-brand-cream transition group flex items-end p-5">
+          <picture class="absolute inset-0">
+            <source srcset="assets/images/ardmore/graded-slabs-magnetic-one-touch-cases-ardmore-ok.webp" type="image/webp">
+            <img src="assets/images/ardmore/graded-slabs-magnetic-one-touch-cases-ardmore-ok.jpg" alt="PSA and SGC graded slabs" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          </picture>
+          <div class="absolute inset-0 bento-overlay"></div>
+          <span class="relative z-10 font-display text-2xl sm:text-3xl text-white uppercase leading-tight">Graded Slabs &amp; Autos</span>
+        </a>
+
+        <a href="https://www.ebay.com/sch/i.html?_ssn=pocketcash&amp;_nkw=Vintage+Baseball&amp;_sop=12&amp;mkcid=1&amp;mkrid=711-53200-19255-0&amp;siteid=0&amp;campid=5339204284&amp;customid=cat_vintage&amp;toolid=10001&amp;mkevt=1" target="_blank" rel="sponsored noopener noreferrer" class="relative aspect-square rounded-2xl overflow-hidden border border-brand-border hover:border-brand-primary transition group flex items-end p-5">
+          <picture class="absolute inset-0">
+            <source srcset="assets/images/ardmore/vintage-sports-cards-texoma-trading-post-ardmore-ok.webp" type="image/webp">
+            <img src="assets/images/ardmore/vintage-sports-cards-texoma-trading-post-ardmore-ok.jpg" alt="Vintage baseball and Hall of Fame cards" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          </picture>
+          <div class="absolute inset-0 bento-overlay"></div>
+          <span class="relative z-10 font-display text-2xl sm:text-3xl text-white uppercase leading-tight">Vintage &amp; Hall of Fame</span>
+        </a>
+
+        <a href="https://www.ebay.com/sch/i.html?_ssn=pocketcash&amp;_nkw=Rookie&amp;_sop=12&amp;mkcid=1&amp;mkrid=711-53200-19255-0&amp;siteid=0&amp;campid=5339204284&amp;customid=cat_rookies&amp;toolid=10001&amp;mkevt=1" target="_blank" rel="sponsored noopener noreferrer" class="relative aspect-square rounded-2xl overflow-hidden border border-brand-border hover:border-brand-primary transition group flex items-end p-5">
+          <picture class="absolute inset-0">
+            <source srcset="assets/images/ardmore/modern-rookie-cards-stars-ardmore-ok-showcase.webp" type="image/webp">
+            <img src="assets/images/ardmore/modern-rookie-cards-stars-ardmore-ok-showcase.jpg" alt="Modern rookie cards and stars" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          </picture>
+          <div class="absolute inset-0 bento-overlay"></div>
+          <span class="relative z-10 font-display text-2xl sm:text-3xl text-white uppercase leading-tight">Modern Rookies &amp; Stars</span>
+        </a>
+
+        <a href="https://www.ebay.com/sch/i.html?_ssn=pocketcash&amp;_nkw=Banana+Ball&amp;_sop=12&amp;mkcid=1&amp;mkrid=711-53200-19255-0&amp;siteid=0&amp;campid=5339204284&amp;customid=cat_banana&amp;toolid=10001&amp;mkevt=1" target="_blank" rel="sponsored noopener noreferrer" class="relative aspect-square rounded-2xl overflow-hidden border border-brand-border hover:border-brand-cream transition group flex items-end p-5">
+          <picture class="absolute inset-0">
+            <source srcset="assets/images/ardmore/pocket-cash-cards-ardmore-ok-glass-case-cards.webp" type="image/webp">
+            <img src="assets/images/ardmore/pocket-cash-cards-ardmore-ok-glass-case-cards.jpg" alt="Banana Ball and niche league cards" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          </picture>
+          <div class="absolute inset-0 bento-overlay"></div>
+          <span class="relative z-10 font-display text-2xl sm:text-3xl text-white uppercase leading-tight">Banana Ball &amp; Niche</span>
+        </a>
+
+        <a href="https://www.ebay.com/sch/i.html?_ssn=pocketcash&amp;_nkw=IndyCar&amp;_sop=12&amp;mkcid=1&amp;mkrid=711-53200-19255-0&amp;siteid=0&amp;campid=5339204284&amp;customid=cat_indycar&amp;toolid=10001&amp;mkevt=1" target="_blank" rel="sponsored noopener noreferrer" class="relative aspect-square rounded-2xl overflow-hidden border border-brand-border hover:border-brand-secondary transition group flex items-end p-5">
+          <picture class="absolute inset-0">
+            <source srcset="assets/images/ebay_drops.webp" type="image/webp">
+            <img src="assets/images/ebay_drops.jpg" alt="IndyCar and racing trading cards" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          </picture>
+          <div class="absolute inset-0 bento-overlay"></div>
+          <span class="relative z-10 font-display text-2xl sm:text-3xl text-white uppercase leading-tight">IndyCar &amp; Racing</span>
+        </a>
+
+        <a href="https://www.ebay.com/sch/i.html?_ssn=pocketcash&amp;_nkw=CPBL&amp;_sop=12&amp;mkcid=1&amp;mkrid=711-53200-19255-0&amp;siteid=0&amp;campid=5339204284&amp;customid=cat_cpbl&amp;toolid=10001&amp;mkevt=1" target="_blank" rel="sponsored noopener noreferrer" class="relative aspect-square rounded-2xl overflow-hidden border border-brand-border hover:border-brand-primary transition group flex items-end p-5">
+          <picture class="absolute inset-0">
+            <source srcset="assets/images/ardmore/baseball-cards-wax-packs-booth-64-ardmore-ok.webp" type="image/webp">
+            <img src="assets/images/ardmore/baseball-cards-wax-packs-booth-64-ardmore-ok.jpg" alt="Taiwan CPBL international imports and wax packs" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          </picture>
+          <div class="absolute inset-0 bento-overlay"></div>
+          <span class="relative z-10 font-display text-2xl sm:text-3xl text-white uppercase leading-tight">Taiwan CPBL Imports</span>
+        </a>
+
+        <a href="https://www.ebay.com/sch/i.html?_ssn=pocketcash&amp;_nkw=Rodeo&amp;_sop=12&amp;mkcid=1&amp;mkrid=711-53200-19255-0&amp;siteid=0&amp;campid=5339204284&amp;customid=cat_rodeo&amp;toolid=10001&amp;mkevt=1" target="_blank" rel="sponsored noopener noreferrer" class="relative aspect-square rounded-2xl overflow-hidden border border-brand-border hover:border-brand-cream transition group flex items-end p-5">
+          <picture class="absolute inset-0">
+            <source srcset="assets/images/ardmore/ardmore-antique-mall-booth-64-sports-card-display.webp" type="image/webp">
+            <img src="assets/images/ardmore/ardmore-antique-mall-booth-64-sports-card-display.jpg" alt="PRCA Rodeo and Western sports cards" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          </picture>
+          <div class="absolute inset-0 bento-overlay"></div>
+          <span class="relative z-10 font-display text-2xl sm:text-3xl text-white uppercase leading-tight">PRCA Rodeo &amp; Western</span>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 6. "Want To Visit?" Brick-and-Mortar 50/50 Split -->
+  <section class="py-12 sm:py-16 border-t border-brand-border/60 bg-brand-navy/35">
+    <div class="max-w-[1414px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+
+        <div class="lg:col-span-6 space-y-6">
+          <span class="text-xs font-bold uppercase tracking-widest text-brand-primary">In-Person Retail Booth • Southern Oklahoma</span>
+          <h2 class="font-display text-4xl sm:text-5xl text-white uppercase leading-none">Want to Visit Our Ardmore Shop?</h2>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Shop our curated physical display cases inside <strong class="text-white">Texoma Trading Post (Booth #64)</strong> in downtown Ardmore. Our booth carries separate in-store inventory from our eBay warehouse—including singles, wax packs, toploaders, and local consignment drop-off by appointment.
+          </p>
+
+          <div class="space-y-2.5 text-sm text-slate-300 border-l-2 border-brand-primary pl-4">
+            <div>
+              <span class="text-slate-400 block text-xs uppercase font-bold">Address</span>
+              <a href="https://maps.app.goo.gl/GS6HvHtihaNX4KUv6" target="_blank" rel="noopener noreferrer" class="text-white hover:text-brand-primary font-semibold transition">
+                219 W. Main St. #64, Ardmore, OK 73401 ↗
+              </a>
+            </div>
+            <div>
+              <span class="text-slate-400 block text-xs uppercase font-bold">Phone / Text</span>
+              <a href="tel:4054597176" class="text-brand-primary hover:underline font-semibold">(405) 459-7176</a>
+            </div>
+            <div>
+              <span class="text-slate-400 block text-xs uppercase font-bold">Store Hours</span>
+              <span>Tue – Fri: 10:00 am – 5:30 pm • Sat: 10:00 am – 3:00 pm • Sun – Mon: Closed</span>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-3 pt-1">
+            <a href="ardmore.html" class="bg-brand-primary hover:bg-brand-primaryHover text-slate-950 font-bold text-sm px-6 py-3 rounded-full transition">
+              Booth Details &amp; Photos →
+            </a>
+            <a href="https://maps.app.goo.gl/GS6HvHtihaNX4KUv6" target="_blank" rel="noopener noreferrer" class="bg-brand-card hover:bg-slate-800 text-white font-semibold text-sm px-6 py-3 rounded-full border border-brand-border transition">
+              Get Directions ↗
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6">
+          <div class="rounded-3xl overflow-hidden border border-brand-border shadow-2xl bg-brand-card">
+            <picture>
+              <source srcset="assets/images/ardmore/pocket-cash-cards-booth-64-ardmore-ok-exterior.webp" type="image/webp">
+              <img src="assets/images/ardmore/pocket-cash-cards-booth-64-ardmore-ok-exterior.jpg" alt="Pocket Cash Cards Booth 64 storefront inside Texoma Trading Post, Ardmore OK" class="w-full h-auto object-cover">
+            </picture>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. "Have Questions? We Have Answers!" Pill FAQ Accordion -->
+  <section class="py-12 sm:py-16 border-t border-brand-border/60">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+
+      <div class="text-center space-y-2">
+        <span class="text-xs font-bold uppercase tracking-widest text-brand-secondary">Consignment &amp; Order Details</span>
+        <h2 class="font-display text-4xl sm:text-5xl text-white uppercase">Have Questions? We Have Answers!</h2>
+      </div>
+
+      <div class="space-y-3" id="faqAccordion">
+
+        <div class="faq-item bg-brand-card border border-brand-border rounded-2xl overflow-hidden" data-open="true">
+          <button type="button" class="faq-toggle w-full flex items-center justify-between gap-4 px-6 py-4 text-left">
+            <span class="font-display text-xl sm:text-2xl text-white uppercase tracking-wide">How does local sports card consignment work?</span>
+            <span class="faq-plus text-brand-secondary font-bold text-2xl leading-none transition-transform">+</span>
+          </button>
+          <div class="faq-answer px-6 pb-5 text-sm text-slate-300 leading-relaxed border-t border-brand-border/60 pt-3">
+            Text 3 photos of your $20+ singles or graded slabs to (405) 459-7176. Once approved, we meet in person in Ardmore, Durant, Mead, Madill, Kingston, Sherman, or Denison, verify each card together, place them in our padded Zion slab case, and store them in a locked fire-rated safe while they sell on our eBay storefront.
+          </div>
+        </div>
+
+        <div class="faq-item bg-brand-card border border-brand-border rounded-2xl overflow-hidden">
+          <button type="button" class="faq-toggle w-full flex items-center justify-between gap-4 px-6 py-4 text-left">
+            <span class="font-display text-xl sm:text-2xl text-white uppercase tracking-wide">What percentage do I keep on consigned cards?</span>
+            <span class="faq-plus text-brand-secondary font-bold text-2xl leading-none transition-transform">+</span>
+          </button>
+          <div class="faq-answer px-6 pb-5 text-sm text-slate-300 leading-relaxed border-t border-brand-border/60 pt-3">
+            You keep <strong>85% of net proceeds</strong> on $500+ graded slabs (7-day auction), <strong>75% of net proceeds</strong> on standard 7-day auctions ($15–$499), or <strong>65% of net proceeds</strong> on 30-day Buy-It-Now listings ($75+ minimum). There is a $5/card upfront intake fee covering high-res scans, 1080p vertical video, safe custody, and 1 free relist.
+          </div>
+        </div>
+
+        <div class="faq-item bg-brand-card border border-brand-border rounded-2xl overflow-hidden">
+          <button type="button" class="faq-toggle w-full flex items-center justify-between gap-4 px-6 py-4 text-left">
+            <span class="font-display text-xl sm:text-2xl text-white uppercase tracking-wide">How do eBay payouts work and when am I paid?</span>
+            <span class="faq-plus text-brand-secondary font-bold text-2xl leading-none transition-transform">+</span>
+          </button>
+          <div class="faq-answer px-6 pb-5 text-sm text-slate-300 leading-relaxed border-t border-brand-border/60 pt-3">
+            Standard payouts go out fee-free via Zelle on the 1st Friday of every month after the eBay return hold window clears, accompanied by a line-by-line settlement sheet. An optional Fast Payout (5% fee, $5 min) is available 3 days after USPS delivery confirmation on sales up to $250.
+          </div>
+        </div>
+
+        <div class="faq-item bg-brand-card border border-brand-border rounded-2xl overflow-hidden">
+          <button type="button" class="faq-toggle w-full flex items-center justify-between gap-4 px-6 py-4 text-left">
+            <span class="font-display text-xl sm:text-2xl text-white uppercase tracking-wide">How are online card orders packed and shipped?</span>
+            <span class="faq-plus text-brand-secondary font-bold text-2xl leading-none transition-transform">+</span>
+          </button>
+          <div class="faq-answer px-6 pb-5 text-sm text-slate-300 leading-relaxed border-t border-brand-border/60 pt-3">
+            Thin raw singles &le; $20 ship via eBay Standard Envelope with $1 combined shipping. Orders up to $100 ship double-padded in a padded mailer inside a padded mailer, and $100+ cards or slabs ship in a padded mailer inside a sturdy box via tracked USPS.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 8. Clean Centered Consignment Inquiry Form -->
+  <section id="buylist" class="py-12 sm:py-16 border-t border-brand-border/60 bg-brand-navy/35">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+
+      <div class="text-center space-y-2">
+        <span class="text-xs font-bold uppercase tracking-widest text-brand-primary">Local Consignment Review</span>
+        <h2 class="font-display text-4xl sm:text-5xl text-white uppercase">Ready to Consign Your Cards?</h2>
+        <p class="text-sm text-slate-400">Tell us what you have or text 3 photos to <a href="tel:4054597176" class="text-brand-primary font-bold hover:underline">(405) 459-7176</a>.</p>
+      </div>
+
+      <form id="appraisalForm" onsubmit="handleAppraisalSubmit(event)" class="bg-brand-card border border-brand-border rounded-3xl p-6 sm:p-8 space-y-4 shadow-xl">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <input type="text" id="sellerLocation" placeholder="Your Name &amp; Town (e.g., Durant, Ardmore, Sherman) *" required class="w-full bg-brand-dark border border-brand-border rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-primary">
+          <input type="text" id="sellerContact" placeholder="Phone Number or Email *" required class="w-full bg-brand-dark border border-brand-border rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-primary">
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <select id="cardType" aria-label="Collection Era or Type" class="w-full bg-brand-dark border border-brand-border rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-primary">
+            <option value="Graded Slabs (PSA / SGC / BGS)">Graded Slabs (PSA / SGC / BGS)</option>
+            <option value="Vintage Stars &amp; Sets (Pre-1975)">Vintage Stars &amp; Sets (Pre-1975)</option>
+            <option value="Modern Rookies, Autos &amp; #/d Parallels">Modern Rookies, Autos &amp; #/d Parallels</option>
+            <option value="Complete Collection / Estate Lot">Complete Collection / Estate Lot</option>
+          </select>
+          <select id="cardQty" aria-label="Approximate Quantity" class="w-full bg-brand-dark border border-brand-border rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-primary">
+            <option value="1 to 10 Cards ($20+ ea)">1 to 10 Cards ($20+ ea)</option>
+            <option value="10 to 50 Cards / Mixed Lot">10 to 50 Cards / Mixed Lot</option>
+            <option value="50+ Cards / Full Collection">50+ Cards / Full Collection</option>
+          </select>
+        </div>
+        <textarea id="cardHighlights" rows="3" placeholder="Key players, years, cert numbers, or sets (e.g., PSA 10 rookies, 1960s Topps stars, numbered autos) *" required class="w-full bg-brand-dark border border-brand-border rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-primary"></textarea>
+
+        <div class="flex flex-wrap items-center gap-3 pt-1">
+          <button type="submit" class="bg-brand-primary hover:bg-brand-primaryHover text-slate-950 font-bold text-sm px-7 py-3 rounded-full shadow-lg transition">
+            Submit Consignment Inquiry
+          </button>
+          <a href="consignment.html" class="text-sm font-bold text-slate-300 hover:text-brand-primary transition px-3 py-2">
+            Full Terms &amp; Calculator →
+          </a>
+        </div>
+
+        <div id="appraisalSuccess" class="hidden p-3 rounded-xl bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 text-xs font-bold text-center">
+          Opening your email app to send details to Pocket Cash!
+        </div>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- 9. Clean Centered Dark Footer -->
+  <footer class="mt-auto bg-[#07090C] border-t border-brand-border text-slate-400 text-xs py-12">
+    <div class="max-w-[1414px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto text-center md:text-left">
+        <div class="space-y-2.5">
+          <h4 class="text-white font-bold text-sm uppercase tracking-wider">Quick Links</h4>
+          <div class="flex flex-col space-y-1.5">
+            <a href="index.html" class="hover:text-white transition">Home</a>
+            <a href="consignment.html" class="text-brand-primary font-bold hover:underline">Local Consignment</a>
+            <a href="shop.html" class="hover:text-white transition">Live Card Vault</a>
+            <a href="ardmore.html" class="hover:text-white transition">Ardmore Shop (#64)</a>
+          </div>
+        </div>
+
+        <div class="space-y-2.5">
+          <h4 class="text-white font-bold text-sm uppercase tracking-wider">Collector Resources</h4>
+          <div class="flex flex-col space-y-1.5">
+            <a href="checklists/index.html" class="hover:text-white transition">Checklists &amp; Value Guides (96 Sets)</a>
+            <a href="supplies.html" class="hover:text-white transition">Archival Supplies Guide</a>
+            <a href="https://mailchi.mp/e4605a56db23/pocket-cash-cards" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">VIP Collector's Club ↗</a>
+          </div>
+        </div>
+
+        <div class="space-y-2.5">
+          <h4 class="text-white font-bold text-sm uppercase tracking-wider">Ardmore Booth &amp; Contact</h4>
+          <p class="text-slate-400 leading-relaxed">
+            219 W. Main St. #64, Ardmore, OK 73401<br>
+            Tue–Fri 10am–5:30pm • Sat 10am–3pm<br>
+            Phone: <a href="tel:4054597176" class="text-brand-primary hover:underline">(405) 459-7176</a><br>
+            Email: <a href="mailto:info@getpocketcash.com" class="text-brand-primary hover:underline">info@getpocketcash.com</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="border-t border-slate-800/80 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <img src="assets/images/logo.png" alt="Pocket Cash Cards" class="h-8 w-auto object-contain">
+          <span>&copy; 2026 Pocket Cash Cards • Ardmore &amp; Lake Texoma</span>
+        </div>
+        <div class="flex items-center gap-4 text-xs font-semibold">
+          <a href="https://www.facebook.com/GetPocketCash" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Facebook</a>
+          <a href="https://www.ebay.com/str/pocketcash?mkcid=1&amp;mkrid=711-53200-19255-0&amp;siteid=0&amp;campid=5339204284&amp;customid=footer_ebay&amp;toolid=10001&amp;mkevt=1" target="_blank" rel="sponsored noopener noreferrer" class="hover:text-white transition">eBay Store ↗</a>
+          <a href="https://mailchi.mp/e4605a56db23/pocket-cash-cards" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">VIP List ↗</a>
+        </div>
+      </div>
+
+      <p class="text-center text-xs text-slate-500/80">
+        Pocket Cash is a participant in the eBay Partner Network and the Amazon Services LLC Associates Program. As an eBay Partner Network Affiliate and Amazon Associate, Pocket Cash earns from qualifying purchases.
+      </p>
+
     </div>
   </footer>
 
-  <!-- Mobile Navigation Script -->
+  <!-- Live Top 10 Products Data (Auto-Synced Daily) -->
+  <script src="assets/js/shop-products.js"></script>
+
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-      const mobileMenu = document.getElementById('mobileMenu');
-      if (mobileMenuBtn && mobileMenu) {
-        mobileMenuBtn.addEventListener('click', () => {
-          mobileMenu.classList.toggle('hidden');
+    // Hero Carousel
+    (() => {
+      const slides = Array.from(document.querySelectorAll('.hero-slide'));
+      const dots = Array.from(document.querySelectorAll('.hero-dot'));
+      let idx = 0;
+
+      function showSlide(n) {
+        idx = (n + slides.length) % slides.length;
+        slides.forEach((s, i) => s.classList.toggle('hidden', i !== idx));
+        dots.forEach((d, i) => {
+          d.classList.toggle('w-8', i === idx);
+          d.classList.toggle('bg-brand-primary', i === idx);
+          d.classList.toggle('w-4', i !== idx);
+          d.classList.toggle('bg-slate-600', i !== idx);
         });
       }
+
+      const prevBtn = document.getElementById('heroPrev');
+      const nextBtn = document.getElementById('heroNext');
+      if (prevBtn) prevBtn.addEventListener('click', () => showSlide(idx - 1));
+      if (nextBtn) nextBtn.addEventListener('click', () => showSlide(idx + 1));
+      dots.forEach((d) => d.addEventListener('click', () => showSlide(Number(d.dataset.slide || 0))));
+    })();
+
+    // Featured Live Vault 4-Across Slider
+    (() => {
+      const grid = document.getElementById('homeVaultGrid');
+      const items = Array.isArray(window.PC_SHOP_PRODUCTS) ? window.PC_SHOP_PRODUCTS : [];
+      let offset = 0;
+      const pageSize = 4;
+
+      function renderCards() {
+        if (!grid) return;
+        if (!items.length) {
+          grid.innerHTML = '<div class="col-span-full bg-brand-card rounded-2xl border border-brand-border p-6 text-center text-sm text-slate-300">Visit our <a href="shop.html" class="text-brand-primary underline font-bold">Live Shop</a> for current listings.</div>';
+          return;
+        }
+        const visible = [];
+        for (let i = 0; i < Math.min(pageSize, items.length); i++) {
+          visible.push(items[(offset + i) % items.length]);
+        }
+        grid.innerHTML = visible.map((p) => {
+          const backImg = p.backImage
+            ? `<img src="${p.backImage}" alt="${p.title} back scan" loading="lazy" class="w-full h-full object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute inset-0 p-3">`
+            : '';
+          return `
+            <div class="bg-brand-card rounded-2xl border border-brand-border hover:border-brand-primary/60 p-4 flex flex-col justify-between gap-3.5 transition group shadow-lg">
+              <div class="space-y-3">
+                <a href="${p.ctaUrl}" target="_blank" rel="sponsored noopener noreferrer" class="block relative aspect-[4/5] rounded-xl bg-brand-dark border border-brand-border/80 overflow-hidden p-3">
+                  <img src="${p.image}" alt="${p.imageAlt || p.title}" loading="lazy" class="w-full h-full object-contain transition-opacity duration-300 ${p.backImage ? 'group-hover:opacity-0' : ''}">
+                  ${backImg}
+                </a>
+                <a href="${p.ctaUrl}" target="_blank" rel="sponsored noopener noreferrer" class="block w-full text-center bg-brand-primary hover:bg-brand-primaryHover text-slate-950 font-bold text-xs py-2.5 rounded-full transition shadow">
+                  Buy on eBay • ${p.price}
+                </a>
+              </div>
+              <div class="space-y-1">
+                <div class="text-[11px] font-bold uppercase tracking-wider text-brand-cream">${p.statusBadge || 'Live'} • ${p.badge || 'eBay Drop'}</div>
+                <h3 class="text-sm font-semibold text-white line-clamp-2 leading-snug">${p.title}</h3>
+                <div class="text-base font-bold text-brand-primary">${p.price}</div>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      const prevBtn = document.getElementById('vaultPrev');
+      const nextBtn = document.getElementById('vaultNext');
+      if (prevBtn) prevBtn.addEventListener('click', () => { offset = (offset - pageSize + Math.max(items.length, 1)) % Math.max(items.length, 1); renderCards(); });
+      if (nextBtn) nextBtn.addEventListener('click', () => { offset = (offset + pageSize) % Math.max(items.length, 1); renderCards(); });
+      renderCards();
+    })();
+
+    // FAQ Accordion
+    document.querySelectorAll('.faq-toggle').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const wasOpen = item.getAttribute('data-open') === 'true';
+        document.querySelectorAll('.faq-item').forEach((el) => el.setAttribute('data-open', 'false'));
+        item.setAttribute('data-open', wasOpen ? 'false' : 'true');
+      });
     });
-    // Live eBay Store Search Handler (Home Hero)
+
+    // Storefront Search Redirect (EPN)
     const homeSearchForm = document.getElementById('pcHomeSearchForm');
     if (homeSearchForm) {
       homeSearchForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const q = (document.getElementById('pcHomeQuery').value || '').trim();
         const epnBase = 'https://www.ebay.com/sch/i.html?_ssn=pocketcash&_sop=12&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339204284&toolid=10001&mkevt=1';
-        const url = q 
+        const url = q
           ? `${epnBase}&customid=home_search_submit&_nkw=${encodeURIComponent(q)}`
           : 'https://www.ebay.com/str/pocketcash?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339204284&customid=home_search_empty&toolid=10001&mkevt=1';
         if (typeof gtag === 'function') {
@@ -656,6 +900,29 @@
         }
         window.open(url, '_blank', 'noopener,noreferrer');
       });
+    }
+
+    // Consignment Inquiry Mailto Handler
+    function handleAppraisalSubmit(e) {
+      e.preventDefault();
+      const type = document.getElementById('cardType').value;
+      const qty = document.getElementById('cardQty').value;
+      const highlights = document.getElementById('cardHighlights').value;
+      const location = document.getElementById('sellerLocation').value;
+      const contact = document.getElementById('sellerContact').value;
+
+      const subject = encodeURIComponent('Card Consignment Review Request: ' + type);
+      const body = encodeURIComponent(
+        'Hello David,\n\nI would like to consign cards with Pocket Cash:\n\n' +
+        '• Era / Type: ' + type + '\n' +
+        '• Approximate Count: ' + qty + '\n' +
+        '• Key Highlights: ' + highlights + '\n' +
+        '• Name & Town: ' + location + '\n' +
+        '• Contact: ' + contact + '\n'
+      );
+
+      document.getElementById('appraisalSuccess').classList.remove('hidden');
+      window.location.href = 'mailto:info@getpocketcash.com?subject=' + subject + '&body=' + body;
     }
   </script>
 </body>
