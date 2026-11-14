@@ -43,9 +43,7 @@
 
   var ebayUrl = 'https://ebay.us/dpjwTn';
 
-  var affText = active === 'shop'
-    ? 'As an eBay Partner Network Affiliate, Pocket Cash earns from qualifying purchases.'
-    : 'As an eBay Partner Network Affiliate and Amazon Associate, Pocket Cash earns from qualifying purchases.';
+  var affText = 'As an eBay Partner Network Affiliate and Amazon Associate, Pocket Cash earns from qualifying purchases.';
 
   var headerHtml = [
     '<header id="pcSiteHeader" class="sticky top-0 z-50 bg-brand-navy/95 backdrop-blur-lg border-b border-brand-border">',
