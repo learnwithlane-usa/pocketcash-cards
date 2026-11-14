@@ -43,6 +43,10 @@
 
   var ebayUrl = 'https://ebay.us/dpjwTn';
 
+  var affText = active === 'shop'
+    ? 'As an eBay Partner Network Affiliate, Pocket Cash earns from qualifying purchases.'
+    : 'As an eBay Partner Network Affiliate and Amazon Associate, Pocket Cash earns from qualifying purchases.';
+
   var headerHtml = [
     '<header id="pcSiteHeader" class="sticky top-0 z-50 bg-brand-navy/95 backdrop-blur-lg border-b border-brand-border">',
     '  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">',
@@ -103,7 +107,10 @@
     '      Shop Daily eBay Drops ↗',
     '    </a>',
     '  </div>',
-    '</header>'
+    '</header>',
+    '<div aria-label="Affiliate disclosure" class="bg-slate-950/90 border-b border-brand-border/50 px-4 py-1 text-center text-[11px] text-slate-400">',
+    '  <span><strong class="text-brand-cream">Affiliate Disclosure:</strong> ' + affText + '</span>',
+    '</div>'
   ].join('\n');
 
   if (scriptEl && scriptEl.parentNode) {
