@@ -51,9 +51,9 @@
     column-gutter: 6pt,
     align: center + horizon,
     [
-      #text(size: 7.3pt, weight: "bold", fill: pc-green)[UPFRONT LISTING FEE] \
-      #text(size: 9.2pt, weight: "bold")[\$5.00 / Card] \
-      #text(size: 6.8pt)[Paid at intake (Non-refundable)]
+      #text(size: 7.3pt, weight: "bold", fill: pc-green)[UPFRONT INTAKE FEE] \
+      #text(size: 9.2pt, weight: "bold")[\$0.00 Upfront] \
+      #text(size: 6.8pt)[Screened \$35+ cards • Zero homework]
     ],
     [
       #text(size: 7.3pt, weight: "bold", fill: pc-green)[7-DAY AUCTION TIERS] \
@@ -81,12 +81,12 @@
   ]
 ]
 
-#clause("1", "LISTING FEE & SCOPE")[
-  Consignor delivers the trading cards listed on Schedule A to Pocket Cash Cards ("Pocket Cash") at an agreed local meet-up to sell on eBay as Consignor's agent and bailee for mutual benefit. Consignor pays a non-refundable *\$5.00 per card Listing Fee* at intake (Cash or Zelle), which is earned upon logging and not credited against commission. The fee covers intake, front/back imaging, custom listing video, safe custody, and either: (a) one 7-day eBay auction plus one (1) free 7-day relist if unsold, or (b) one 30-day Buy-It-Now listing. Pocket Cash may decline any card or price unlikely to clear fees and expenses.
+#clause("1", "ZERO UPFRONT FEE, PRE-SCREENING & SCOPE")[
+  Consignor delivers pre-screened trading cards (minimum *\$35.00 verifiable market value per card*) listed on Schedule A to Pocket Cash Cards ("Pocket Cash") at an agreed local meet-up to sell on eBay as Consignor's agent and bailee for mutual benefit. There is *\$0.00 upfront listing or intake fee*—Pocket Cash logs and scans every approved card onto Schedule A at meet-up (no customer prep required) and covers high-resolution front/back imaging, clean 1080p listing video, fire-rated safe custody, packaging supplies, and either: (a) one 7-day eBay auction plus one (1) free 7-day relist if unsold, or (b) one 30-day Buy-It-Now listing. Pocket Cash may decline any card or starting price unlikely to clear market comps and fees.
 ]
 
 #clause("2", "PRICING, STARTING BIDS & RELISTS")[
-  Consignor sets the Starting Bid (*\$15.00 minimum*; no hidden eBay reserves) or Buy-It-Now price (*\$75.00 minimum*) for each card on Schedule A. If a 7-day auction receives no bids, Consignor receives one (1) free 7-day relist (and may lower the Starting Bid). After the included listing(s), Consignor may either arrange return of an unsold card at no charge or prepay *\$3.00 per card* for each additional 7-day auction or 30-day Buy-It-Now cycle (maximum 4 total cycles per card). Cards cannot be withdrawn while a listing is live.
+  Consignor and Pocket Cash confirm a realistic Starting Bid (*\$25.00 minimum*; no hidden eBay reserves) or Buy-It-Now price (*\$75.00 minimum*) for each card on Schedule A. If a 7-day auction receives no bids, Consignor receives one (1) free 7-day relist (and may adjust the Starting Bid). After the included listing(s), Consignor may either arrange return of an unsold card at no charge or prepay *\$3.00 per card* for each additional 7-day auction or 30-day Buy-It-Now cycle (maximum 4 total cycles per card). Cards cannot be withdrawn while a listing is live.
 ]
 
 #clause("3", "NON-PAYING BUYER PROTECTION")[
@@ -94,7 +94,7 @@
 ]
 
 #clause("4", "NET PROCEEDS & TIERED COMMISSION")[
-  *"Net Proceeds"* equals the Item Sale Price plus Buyer-Paid Shipping, *MINUS*: (a) actual eBay Final Value Fees and order fees shown on the eBay order record, (b) the actual cost of the shipping, insurance, and signature label, and (c) a flat *\$1.50 per sold card Packaging & Materials fee* retained by Pocket Cash (covering penny sleeve, rigid holder, mailer, and label). Sales tax collected by eBay is excluded. Pocket Cash retains *15% of Net Proceeds* on High-End Graded Slab Auctions selling for *\$500.00+* (*Consignor keeps 85%*), *25% of Net Proceeds* on Standard Auctions selling for *\$15.00–\$499.99* (*Consignor keeps 75%*), and *35% of Net Proceeds* on Buy-It-Now sales (*Consignor keeps 65%*; minimum \$5.00 commission per sold card, capped at Net Proceeds; if Net Proceeds are zero or negative, payout is \$0 and Consignor owes no deficit).
+  *"Net Proceeds"* equals the Item Sale Price plus Buyer-Paid Shipping, *MINUS*: (a) actual eBay Final Value Fees and order fees shown on the eBay order record, and (b) the actual cost of the tracked USPS shipping, insurance, and signature label. There is *\$0.00 packaging or materials surcharge*—Pocket Cash absorbs sleeves, rigid holders, armor, and mailers. Sales tax collected by eBay is excluded. Pocket Cash retains *15% of Net Proceeds* on High-End Graded Slab Auctions selling for *\$500.00+* (*Consignor keeps 85%*), *25% of Net Proceeds* on Standard Auctions selling up to *\$499.99* (*Consignor keeps 75%*), and *35% of Net Proceeds* on Buy-It-Now sales (*Consignor keeps 65%*; minimum \$5.00 commission per sold card, capped at Net Proceeds; if Net Proceeds are zero or negative, payout is \$0 and Consignor owes no deficit).
 ]
 
 #clause("5", "MONTHLY STANDARD PAYOUT ($0 FEE)")[
@@ -143,8 +143,8 @@
     [*Zelle Phone / Email:* \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_],
     [*Phone:* \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_],
     [*Gov Photo ID Checked:* ☐ Yes #h(6pt) *W-9:* ☐ Yes ☐ N/A],
-    [*Cards Logged (Sched. A):* \_\_\_\_ × \$5 = *\$*\_\_\_\_\_\_\_],
-    [*Intake Paid:* ☐ Cash #h(4pt) ☐ Zelle],
+    [*Total Cards Logged (Sched. A):* \_\_\_\_],
+    [*Upfront Intake Fee:* *\$0.00*],
     [*Consignor Signature:* \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_],
     [*Pocket Cash (David Lane):* \_\_\_\_\_\_\_\_\_\_\_\_\_\_],
     [*Date:* \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_],
@@ -178,7 +178,7 @@
 #v(4pt)
 
 #text(size: 8pt, fill: rgb("#333333"))[
-  *Instructions:* List each consigned card below before meet-up. Check *one (1) Condition Category* per card (this logged condition governs Section 9 Safe Custody Valuation; ungraded cards are never valued at graded prices). Consignor sets the Starting Bid (*\$15.00 min*) for 7-Day Auctions (*15% commission on \$500+ slabs / 25% standard*) or Buy-It-Now Price (*\$75.00 min*) for 30-Day BIN (*35% commission*).
+  *No Prep Required — Completed by Pocket Cash at Meet-Up:* Pocket Cash logs and scans your approved \$35+ cards below at handoff. Check *one (1) Condition Category* per card (this logged condition governs Section 9 Safe Custody Valuation; ungraded cards are never valued at graded prices). Confirm Starting Bid (*\$25.00 min*) for 7-Day Auctions (*15% commission on \$500+ slabs / 25% standard*) or Buy-It-Now Price (*\$75.00 min*) for 30-Day BIN (*35% commission*).
 ]
 
 #v(5pt)
@@ -203,7 +203,7 @@
     align(left + horizon)[#text(fill: white, weight: "bold", size: 8pt)[Year • Brand/Set • Player • Card \# • Serial / Parallel / Slab Cert \#]],
     align(center + horizon)[#text(fill: white, weight: "bold", size: 8pt)[Logged Condition \ (Check One)]],
     align(center + horizon)[#text(fill: white, weight: "bold", size: 8pt)[Listing Type \ (Check One)]],
-    align(center + horizon)[#text(fill: white, weight: "bold", size: 8pt)[Start Bid (\$15+) \ or BIN (\$75+)]],
+    align(center + horizon)[#text(fill: white, weight: "bold", size: 8pt)[Start Bid (\$25+) \ or BIN (\$75+)]],
     align(center + horizon)[#text(fill: white, weight: "bold", size: 8pt)[Free Relist \ New Start \$]],
     align(center + horizon)[#text(fill: white, weight: "bold", size: 8pt)[Initials]],
   ),
@@ -227,7 +227,7 @@
       #text(size: 8.5pt, weight: "bold", fill: pc-dark)[INTAKE RECEIPT & CONDITION ACKNOWLEDGMENT] \
       #v(2pt)
       #text(size: 7.8pt)[
-        Consignor confirms that the cards, logged conditions, and starting prices above are accurate, and that the non-refundable \$5.00/card Listing Fee has been paid.
+        Consignor confirms that the cards, logged conditions, and starting prices above are accurate, and acknowledges \$0.00 upfront intake fee under this Agreement.
       ] \
       #v(6pt)
       *Consignor Signature:* \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ *Date:* \_\_\_\_\_\_\_\_
